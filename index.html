@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aych Labs — Enterprise Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0A0D12;
+  --bg2:      #0E1118;
+  --bg3:      #131720;
+  --green:    #00FFA3;
+  --green2:   rgba(0,255,163,0.6);
+  --green3:   rgba(0,255,163,0.15);
+  --green4:   rgba(0,255,163,0.06);
+  --green5:   rgba(0,255,163,0.03);
+  --blue:     #008CFF;
+  --blue2:    rgba(0,140,255,0.6);
+  --purple:   #A855F7;
+  --purple2:  rgba(168,85,247,0.6);
+  --white:    #FFFFFF;
+  --white70:  rgba(255,255,255,0.7);
+  --white50:  rgba(255,255,255,0.5);
+  --white30:  rgba(255,255,255,0.3);
+  --white10:  rgba(255,255,255,0.1);
+  --white05:  rgba(255,255,255,0.05);
+  --white02:  rgba(255,255,255,0.02);
+  --border:   rgba(0,255,163,0.12);
+  --border2:  rgba(255,255,255,0.06);
+  --mono: 'Share Tech Mono', monospace;
+  --display: 'Orbitron', monospace;
+  --body: 'Inter', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── GRID BG ── */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,163,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,163,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+.site-bg-radial {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,200,120,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 85% 60%, rgba(0,140,255,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 20% at 10% 80%, rgba(120,0,255,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,13,18,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-hex {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.nav-wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--white);
+  letter-spacing: 0.12em;
+}
+.nav-wordmark span { color: var(--green); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--white50);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--green); }
+.nav-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: rgba(0,255,163,0.5);
+}
+.nav-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 2rem 60px;
+  text-align: center;
+}
+.scan-line {
+  position: fixed;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,163,0.12), transparent);
+  animation: scan 8s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+@keyframes scan { 0%{top:-2px} 100%{top:100vh} }
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: rgba(0,255,163,0.5);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(0,255,163,0.3);
+}
+
+.hero-logo-mark {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-hex-svg { width: 110px; height: 110px; position: absolute; }
+.hero-h {
+  position: absolute;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 48px;
+  color: var(--white);
+  text-shadow: 0 0 20px rgba(0,255,163,0.8), 0 0 40px rgba(0,255,163,0.4);
+  line-height: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(32px, 6vw, 56px);
+  letter-spacing: 0.1em;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+.hero-title span { color: var(--green); text-shadow: 0 0 20px rgba(0,255,163,0.4); }
+
+.hero-codename {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(0,255,163,0.4);
+  margin-bottom: 28px;
+}
+
+.hero-divider {
+  width: 280px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,163,0.3), rgba(0,140,255,0.2), transparent);
+  margin: 0 auto 28px;
+}
+
+.hero-tagline {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--white50);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+.hero-tagline strong { color: var(--white70); font-weight: 500; }
+
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--bg);
+  background: var(--green);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(0,255,163,0.25);
+}
+.btn-primary:hover { opacity: 0.85; box-shadow: 0 0 32px rgba(0,255,163,0.4); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--white50);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 12px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-secondary:hover { border-color: rgba(0,255,163,0.4); color: var(--green); }
+
+.hero-metrics {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.hero-metric {
+  padding: 16px 32px;
+  border-right: 1px solid var(--border2);
+  text-align: center;
+}
+.hero-metric:last-child { border-right: none; }
+.hm-num {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hm-num.green { color: var(--green); text-shadow: 0 0 12px rgba(0,255,163,0.4); }
+.hm-num.blue { color: #5CB3FF; }
+.hm-num.purple { color: #C084FC; }
+.hm-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: var(--white30);
+}
+
+/* ── SECTION SHARED ── */
+section { position: relative; z-index: 1; }
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 2rem;
+}
+.section-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: rgba(0,255,163,0.45);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: rgba(0,255,163,0.2);
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+.section-title span { color: var(--green); }
+.section-sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--white50);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 52px;
+}
+
+/* ── PLATFORM SECTION ── */
+.platform-section { border-top: 1px solid var(--border2); }
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.platform-card {
+  background: var(--bg2);
+  padding: 28px 24px;
+  transition: background 0.2s;
+}
+.platform-card:hover { background: var(--bg3); }
+.pc-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+}
+.pc-name {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.pc-val {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.pc-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--white30);
+  line-height: 1.6;
+}
+
+/* ── APPS SECTION ── */
+.apps-section { border-top: 1px solid var(--border2); }
+
+.app-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.app-card {
+  background: var(--bg2);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.app-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,163,0.5), transparent);
+}
+.app-card.coming-soon { opacity: 0.5; }
+.app-card.coming-soon::before {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+.app-badge {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  padding: 4px 10px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.app-badge.live {
+  background: rgba(0,255,163,0.08);
+  border: 1px solid rgba(0,255,163,0.25);
+  color: var(--green);
+}
+.app-badge.soon {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white30);
+}
+.app-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: rgba(0,255,163,0.06);
+  border: 1px solid rgba(0,255,163,0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.app-icon-wrap svg { width: 32px; height: 32px; }
+.app-name {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.app-tagline {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+.app-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--white50);
+  line-height: 1.75;
+  max-width: 360px;
+  margin-bottom: 24px;
+}
+.app-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.app-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--white50);
+}
+.app-feature::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px var(--green);
+}
+.app-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.app-link {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--white30);
+  border: 1px solid var(--border2);
+  padding: 6px 14px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.app-link:hover { border-color: rgba(0,255,163,0.3); color: var(--green); }
+.app-link.primary {
+  background: rgba(0,255,163,0.08);
+  border-color: rgba(0,255,163,0.25);
+  color: var(--green);
+}
+.app-link.primary:hover { background: rgba(0,255,163,0.14); }
+
+/* ── THROUGHPUT VIZ ── */
+.viz-section { border-top: 1px solid var(--border2); }
+.viz-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.viz-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,163,0.3), rgba(0,140,255,0.2), transparent);
+}
+.corner-tl, .corner-tr, .corner-bl, .corner-br {
+  position: absolute;
+  width: 16px; height: 16px;
+}
+.corner-tl { top: 0; left: 0; border-top: 1px solid rgba(0,255,163,0.6); border-left: 1px solid rgba(0,255,163,0.6); }
+.corner-tr { top: 0; right: 0; border-top: 1px solid rgba(0,255,163,0.6); border-right: 1px solid rgba(0,255,163,0.6); }
+.corner-bl { bottom: 0; left: 0; border-bottom: 1px solid rgba(0,255,163,0.6); border-left: 1px solid rgba(0,255,163,0.6); }
+.corner-br { bottom: 0; right: 0; border-bottom: 1px solid rgba(0,255,163,0.6); border-right: 1px solid rgba(0,255,163,0.6); }
+
+.viz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.viz-title { font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; color: rgba(0,255,163,0.45); }
+.viz-val { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; color: rgba(0,140,255,0.6); }
+.bar-track {
+  height: 3px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 1px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.bar-fill { height: 100%; border-radius: 1px; background: linear-gradient(90deg,#00FFA3,rgba(0,255,163,0.3)); box-shadow: 0 0 8px rgba(0,255,163,0.3); }
+.bar-fill.blue { background: linear-gradient(90deg,#008CFF,rgba(0,140,255,0.3)); box-shadow: 0 0 8px rgba(0,140,255,0.3); }
+.bar-fill.purple { background: linear-gradient(90deg,#A855F7,rgba(168,85,247,0.3)); box-shadow: 0 0 8px rgba(168,85,247,0.3); }
+.bar-labels { display: flex; justify-content: space-between; margin-top: 10px; }
+.bar-labels span { font-family: var(--mono); font-size: 8px; letter-spacing: 0.12em; }
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+.metric-glass {
+  background: var(--bg2);
+  padding: 16px 20px;
+  text-align: center;
+}
+.metric-num {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--white);
+  text-shadow: 0 0 12px rgba(0,255,163,0.3);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.metric-num.blue { color: #5CB3FF; text-shadow: 0 0 12px rgba(0,140,255,0.4); }
+.metric-num.purple { color: #C084FC; text-shadow: 0 0 12px rgba(168,85,247,0.4); }
+.metric-lbl { font-family: var(--mono); font-size: 7.5px; letter-spacing: 0.15em; color: var(--white30); }
+
+/* ── LEGAL SECTION ── */
+.legal-section { border-top: 1px solid var(--border2); }
+.legal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.legal-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  padding: 28px 24px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.legal-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,163,0.2), transparent);
+}
+.legal-card:hover { border-color: rgba(0,255,163,0.25); background: var(--bg3); }
+.lc-icon { width: 28px; height: 28px; margin-bottom: 14px; }
+.lc-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.lc-desc { font-size: 12px; font-weight: 300; color: var(--white30); line-height: 1.65; }
+.lc-arrow {
+  position: absolute;
+  bottom: 20px; right: 20px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: rgba(0,255,163,0.3);
+  transition: color 0.2s;
+}
+.legal-card:hover .lc-arrow { color: var(--green); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border2);
+  position: relative;
+  z-index: 1;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-wordmark {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--white50);
+}
+.footer-wordmark span { color: var(--green); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--white30);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--green); }
+.footer-legal {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.15);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .platform-grid { grid-template-columns: repeat(2, 1fr); }
+  .app-showcase { grid-template-columns: 1fr; }
+  .metrics-row { grid-template-columns: repeat(2, 1fr); }
+  .legal-grid { grid-template-columns: 1fr; }
+  .hero-metrics { flex-direction: column; gap: 1px; }
+  .nav-links { display: none; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+}
+</style>
+</head>
+<body>
+<div class="site-bg"></div>
+<div class="site-bg-radial"></div>
+<div class="scan-line"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <svg class="nav-hex" viewBox="0 0 32 32" fill="none">
+        <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="rgba(0,255,163,0.06)" stroke="rgba(0,255,163,0.5)" stroke-width="1"/>
+        <polygon points="16,7 25,12 25,20 16,25 7,20 7,12" fill="none" stroke="rgba(0,255,163,0.2)" stroke-width="0.5"/>
+        <text x="16" y="20" text-anchor="middle" font-family="Orbitron" font-weight="900" font-size="11" fill="white">H</text>
+      </svg>
+      <div class="nav-wordmark">AYCH <span>LABS</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#platform">PLATFORM</a></li>
+      <li><a href="#apps">APPS</a></li>
+      <li><a href="terms-of-service.html">TERMS</a></li>
+      <li><a href="#legal">LEGAL</a></li>
+      <li><a href="mailto:support@aychlabs.com">CONTACT</a></li>
+    </ul>
+    <div class="nav-status">
+      <div class="nav-dot"></div>
+      SYSTEMS NOMINAL
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">AYCH-LABS // IDENTITY-v2.4</div>
+
+  <div class="hero-logo-mark">
+    <svg class="hero-hex-svg" viewBox="0 0 110 110" fill="none">
+      <polygon points="55,5 100,30 100,80 55,105 10,80 10,30" fill="rgba(0,255,163,0.04)" stroke="rgba(0,255,163,0.5)" stroke-width="1.2"/>
+      <polygon points="55,14 92,34 92,76 55,96 18,76 18,34" fill="none" stroke="rgba(0,255,163,0.15)" stroke-width="0.5"/>
+      <polygon points="55,23 84,39 84,71 55,87 26,71 26,39" fill="none" stroke="rgba(0,255,163,0.08)" stroke-width="0.5"/>
+      <line x1="55" y1="5" x2="55" y2="105" stroke="rgba(0,255,163,0.05)" stroke-width="0.5"/>
+      <line x1="10" y1="30" x2="100" y2="80" stroke="rgba(0,255,163,0.05)" stroke-width="0.5"/>
+      <line x1="100" y1="30" x2="10" y2="80" stroke="rgba(0,255,163,0.05)" stroke-width="0.5"/>
+      <circle cx="55" cy="55" r="3.5" fill="#00FFA3" opacity="0.6"/>
+      <circle cx="55" cy="55" r="7" fill="none" stroke="rgba(0,255,163,0.3)" stroke-width="0.5"/>
+    </svg>
+    <div class="hero-h">H</div>
+  </div>
+
+  <h1 class="hero-title">AYCH <span>LABS</span></h1>
+  <div class="hero-codename">◈ PLATFORM CODENAME: HYPERION ◈</div>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">
+    <strong>Aych Labs</strong> engineers the intelligence layer between raw enterprise data and decisive action —
+    unifying signal, inference, and orchestration at machine scale across every system of record.
+  </p>
+
+  <div class="hero-cta-row">
+    <a href="#apps" class="btn-primary">EXPLORE OUR APPS →</a>
+    <a href="mailto:support@aychlabs.com" class="btn-secondary">GET IN TOUCH</a>
+  </div>
+
+  <div class="hero-metrics">
+    <div class="hero-metric">
+      <div class="hm-num green">847B</div>
+      <div class="hm-label">EVENTS INDEXED</div>
+    </div>
+    <div class="hero-metric">
+      <div class="hm-num blue">12ms</div>
+      <div class="hm-label">P99 LATENCY</div>
+    </div>
+    <div class="hero-metric">
+      <div class="hm-num purple">99.99%</div>
+      <div class="hm-label">SLA UPTIME</div>
+    </div>
+    <div class="hero-metric">
+      <div class="hm-num">1,200+</div>
+      <div class="hm-label">ENTERPRISE CLIENTS</div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section id="platform" class="platform-section">
+  <div class="section-inner">
+    <div class="section-label">PLATFORM · CAPABILITIES</div>
+    <h2 class="section-title">THE <span>HYPERION</span> STACK</h2>
+    <p class="section-sub">Every app we ship runs on a shared intelligence substrate — built for reliability, privacy, and scale from day one.</p>
+
+    <div class="platform-grid">
+      <div class="platform-card">
+        <svg class="pc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="15" width="28" height="5" rx="1" fill="rgba(0,255,163,0.12)" stroke="rgba(0,255,163,0.4)" stroke-width="0.8"/>
+          <rect x="11" y="9" width="14" height="5" rx="1" fill="rgba(0,255,163,0.06)" stroke="rgba(0,255,163,0.25)" stroke-width="0.8"/>
+          <rect x="11" y="22" width="14" height="5" rx="1" fill="rgba(0,255,163,0.06)" stroke="rgba(0,255,163,0.25)" stroke-width="0.8"/>
+          <circle cx="18" cy="17.5" r="2.5" fill="#00FFA3"/>
+          <circle cx="18" cy="11.5" r="1.5" fill="rgba(0,255,163,0.5)"/>
+          <circle cx="18" cy="24.5" r="1.5" fill="rgba(0,255,163,0.5)"/>
+        </svg>
+        <div class="pc-name">MESH FABRIC</div>
+        <div class="pc-val">128T</div>
+        <div class="pc-desc">Distributed data mesh connecting every source, every format, every frequency.</div>
+      </div>
+      <div class="platform-card">
+        <svg class="pc-icon" viewBox="0 0 36 36" fill="none">
+          <path d="M6 28 L12 17 L18 22 L24 12 L30 18" stroke="rgba(0,140,255,0.8)" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+          <circle cx="6" cy="28" r="2" fill="rgba(0,140,255,0.5)"/>
+          <circle cx="18" cy="22" r="2" fill="rgba(0,140,255,0.7)"/>
+          <circle cx="30" cy="18" r="2" fill="#008CFF"/>
+          <line x1="6" y1="30" x2="30" y2="30" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+        </svg>
+        <div class="pc-name">SIGNAL STREAM</div>
+        <div class="pc-val">99.97%</div>
+        <div class="pc-desc">Real-time signal processing with sub-10ms end-to-end latency guarantees.</div>
+      </div>
+      <div class="platform-card">
+        <svg class="pc-icon" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="11" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
+          <circle cx="18" cy="18" r="6" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.45)" stroke-width="0.8"/>
+          <circle cx="18" cy="18" r="2.5" fill="rgba(168,85,247,0.9)"/>
+          <line x1="18" y1="7" x2="18" y2="4" stroke="rgba(168,85,247,0.4)" stroke-width="0.8"/>
+          <line x1="18" y1="29" x2="18" y2="32" stroke="rgba(168,85,247,0.4)" stroke-width="0.8"/>
+          <line x1="7" y1="18" x2="4" y2="18" stroke="rgba(168,85,247,0.4)" stroke-width="0.8"/>
+          <line x1="29" y1="18" x2="32" y2="18" stroke="rgba(168,85,247,0.4)" stroke-width="0.8"/>
+        </svg>
+        <div class="pc-name">INFERENCE CORE</div>
+        <div class="pc-val">4.2ms</div>
+        <div class="pc-desc">On-device and cloud inference pipelines that decide without waiting.</div>
+      </div>
+      <div class="platform-card">
+        <svg class="pc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="5" y="5" width="11" height="11" rx="1.5" fill="rgba(0,255,163,0.05)" stroke="rgba(0,255,163,0.3)" stroke-width="0.8"/>
+          <rect x="20" y="5" width="11" height="11" rx="1.5" fill="rgba(0,255,163,0.05)" stroke="rgba(0,255,163,0.3)" stroke-width="0.8"/>
+          <rect x="5" y="20" width="11" height="11" rx="1.5" fill="rgba(0,255,163,0.05)" stroke="rgba(0,255,163,0.3)" stroke-width="0.8"/>
+          <rect x="20" y="20" width="11" height="11" rx="1.5" fill="rgba(0,255,163,0.05)" stroke="rgba(0,255,163,0.3)" stroke-width="0.8"/>
+          <circle cx="18" cy="18" r="3" fill="rgba(0,255,163,0.35)" stroke="rgba(0,255,163,0.6)" stroke-width="0.5"/>
+          <line x1="16" y1="16" x2="11" y2="11" stroke="rgba(0,255,163,0.15)" stroke-width="0.5"/>
+          <line x1="20" y1="16" x2="25" y2="11" stroke="rgba(0,255,163,0.15)" stroke-width="0.5"/>
+          <line x1="16" y1="20" x2="11" y2="25" stroke="rgba(0,255,163,0.15)" stroke-width="0.5"/>
+          <line x1="20" y1="20" x2="25" y2="25" stroke="rgba(0,255,163,0.15)" stroke-width="0.5"/>
+        </svg>
+        <div class="pc-name">ORCH LAYER</div>
+        <div class="pc-val">LIVE</div>
+        <div class="pc-desc">Autonomous workflow orchestration across every app and integration point.</div>
+      </div>
+      <div class="platform-card">
+        <svg class="pc-icon" viewBox="0 0 36 36" fill="none">
+          <path d="M18 4 L22 14 L32 14 L24 21 L27 31 L18 25 L9 31 L12 21 L4 14 L14 14 Z" fill="rgba(255,180,0,0.06)" stroke="rgba(255,180,0,0.4)" stroke-width="0.8" stroke-linejoin="round"/>
+          <path d="M18 10 L20.2 17 L27 17 L21.5 21.5 L23.5 28.5 L18 25 L12.5 28.5 L14.5 21.5 L9 17 L15.8 17 Z" fill="rgba(255,180,0,0.18)"/>
+        </svg>
+        <div class="pc-name">THREAT SCORE</div>
+        <div class="pc-val">0.001</div>
+        <div class="pc-desc">Continuous risk quantification with adaptive threat modeling at the edge.</div>
+      </div>
+      <div class="platform-card">
+        <svg class="pc-icon" viewBox="0 0 36 36" fill="none">
+          <path d="M18 3 L30 9 L30 20 C30 27 18 33 18 33 C18 33 6 27 6 20 L6 9 Z" fill="rgba(0,255,163,0.04)" stroke="rgba(0,255,163,0.35)" stroke-width="0.8"/>
+          <path d="M18 9 L26 13 L26 20 C26 24 18 28 18 28 C18 28 10 24 10 20 L10 13 Z" fill="none" stroke="rgba(0,255,163,0.15)" stroke-width="0.5"/>
+          <polyline points="12,19 16,23 24,14" stroke="#00FFA3" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+        </svg>
+        <div class="pc-name">SECURE LAYER</div>
+        <div class="pc-val">L3 CLR</div>
+        <div class="pc-desc">End-to-end encryption and COPPA/GDPR compliance baked into every layer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section id="apps" class="apps-section">
+  <div class="section-inner">
+    <div class="section-label">PRODUCTS · OUR APPS</div>
+    <h2 class="section-title">BUILT ON <span>HYPERION</span></h2>
+    <p class="section-sub">Consumer apps powered by the same enterprise-grade intelligence infrastructure. Starting with the family.</p>
+
+    <div class="app-showcase">
+      <div class="app-card">
+        <span class="app-badge live">● LIVE ON GOOGLE PLAY</span>
+        <div class="app-icon-wrap">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="10" r="5" stroke="#00FFA3" stroke-width="1.2"/>
+            <path d="M8 26 C8 21.6 11.6 18 16 18 C20.4 18 24 21.6 24 26" stroke="#00FFA3" stroke-width="1.2" fill="none"/>
+            <circle cx="9" cy="17" r="3.5" stroke="rgba(0,255,163,0.5)" stroke-width="1"/>
+            <circle cx="23" cy="17" r="3.5" stroke="rgba(0,255,163,0.5)" stroke-width="1"/>
+            <path d="M3 26 C3 22.8 5.8 20 9 20" stroke="rgba(0,255,163,0.4)" stroke-width="1" fill="none"/>
+            <path d="M29 26 C29 22.8 26.2 20 23 20" stroke="rgba(0,255,163,0.4)" stroke-width="1" fill="none"/>
+            <circle cx="16" cy="16" r="2" fill="rgba(0,255,163,0.2)" stroke="rgba(0,255,163,0.5)" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <div class="app-name">FAMILY REWARDS</div>
+        <div class="app-tagline">CHORES · POINTS · REWARDS</div>
+        <p class="app-desc">A chore and rewards app that turns household tasks into a motivation engine for kids — with parent oversight, real-time tracking, and a points system that actually works.</p>
+        <div class="app-features">
+          <div class="app-feature">Task assignment & completion tracking</div>
+          <div class="app-feature">Points-based reward marketplace</div>
+          <div class="app-feature">Parent controls & child profiles</div>
+          <div class="app-feature">COPPA compliant · No ads · No data selling</div>
+          <div class="app-feature">Firebase-backed, encrypted at rest</div>
+        </div>
+        <div class="app-links">
+          <a href="#" class="app-link primary">GOOGLE PLAY ↗</a>
+          <a href="privacy-policy.html" class="app-link">PRIVACY POLICY</a>
+          <a href="delete-account.html" class="app-link">DELETE ACCOUNT</a>
+        </div>
+      </div>
+
+      <div class="app-card coming-soon">
+        <span class="app-badge soon">COMING SOON</span>
+        <div class="app-icon-wrap" style="background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.08);">
+          <svg viewBox="0 0 32 32" fill="none">
+            <rect x="4" y="4" width="24" height="24" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+            <line x1="4" y1="11" x2="28" y2="11" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+            <circle cx="9" cy="7.5" r="1.5" fill="rgba(255,255,255,0.2)"/>
+            <circle cx="14" cy="7.5" r="1.5" fill="rgba(255,255,255,0.2)"/>
+            <rect x="8" y="15" width="6" height="6" rx="1" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+            <rect x="18" y="15" width="6" height="6" rx="1" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="app-name" style="color:rgba(255,255,255,0.4);">NEXT APP</div>
+        <div class="app-tagline" style="color:rgba(255,255,255,0.2);">IN DEVELOPMENT</div>
+        <p class="app-desc" style="color:rgba(255,255,255,0.25);">More apps are in development on the Hyperion platform. Building tools that make everyday life more organized, more rewarding, and more secure.</p>
+        <div class="app-features">
+          <div class="app-feature" style="color:rgba(255,255,255,0.2);">Built on the same privacy-first foundation</div>
+          <div class="app-feature" style="color:rgba(255,255,255,0.2);">Enterprise-grade security for consumers</div>
+          <div class="app-feature" style="color:rgba(255,255,255,0.2);">No ads. No data selling. Ever.</div>
+        </div>
+        <div class="app-links">
+          <a href="mailto:support@aychlabs.com" class="app-link">GET NOTIFIED</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIZ -->
+<section class="viz-section">
+  <div class="section-inner">
+    <div class="section-label">TELEMETRY · LIVE METRICS</div>
+    <h2 class="section-title">PLATFORM <span>VITALS</span></h2>
+    <p class="section-sub" style="margin-bottom:24px;">Real-time throughput across the Hyperion infrastructure stack.</p>
+
+    <div class="viz-card">
+      <div class="corner-tl"></div>
+      <div class="corner-tr"></div>
+      <div class="corner-bl"></div>
+      <div class="corner-br"></div>
+      <div class="viz-header">
+        <span class="viz-title">THROUGHPUT · LAST 7D</span>
+        <span class="viz-val">↑ 18.4% WoW</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+      <div class="bar-track"><div class="bar-fill blue" style="width:78%"></div></div>
+      <div class="bar-track"><div class="bar-fill purple" style="width:45%"></div></div>
+      <div class="bar-labels">
+        <span style="color:rgba(0,255,163,0.4);">EVENTS/SEC</span>
+        <span style="color:rgba(0,140,255,0.4);">INGEST RATE</span>
+        <span style="color:rgba(168,85,247,0.4);">MODEL OPS</span>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-glass">
+        <div class="metric-num">847B</div>
+        <div class="metric-lbl">EVENTS INDEXED</div>
+      </div>
+      <div class="metric-glass">
+        <div class="metric-num blue">12ms</div>
+        <div class="metric-lbl">P99 LATENCY</div>
+      </div>
+      <div class="metric-glass">
+        <div class="metric-num purple">99.99%</div>
+        <div class="metric-lbl">SLA UPTIME</div>
+      </div>
+      <div class="metric-glass">
+        <div class="metric-num" style="font-size:16px;">1,200+</div>
+        <div class="metric-lbl">ENTERPRISE CLIENTS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section id="legal" class="legal-section">
+  <div class="section-inner">
+    <div class="section-label">LEGAL · COMPLIANCE</div>
+    <h2 class="section-title">POLICIES &amp; <span>TRUST</span></h2>
+    <p class="section-sub">Transparency is non-negotiable. Every policy is written in plain language, reviewed by counsel, and available at a permanent URL.</p>
+
+    <div class="legal-grid">
+      <a href="privacy-policy.html" class="legal-card">
+        <svg class="lc-icon" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L24 6.5 L24 14 C24 20.5 14 26 14 26 C14 26 4 20.5 4 14 L4 6.5 Z" stroke="rgba(0,255,163,0.5)" stroke-width="1" fill="rgba(0,255,163,0.04)"/>
+          <polyline points="9,14 12,17 19,10" stroke="#00FFA3" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+        </svg>
+        <div class="lc-title">PRIVACY POLICY</div>
+        <div class="lc-desc">Family Rewards privacy policy — COPPA compliant, GDPR-aware, no data selling, no ads. Full disclosure of all data practices.</div>
+        <div class="lc-arrow">→</div>
+      </a>
+
+      <a href="delete-account.html" class="legal-card">
+        <svg class="lc-icon" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="11" stroke="rgba(0,255,163,0.4)" stroke-width="1" fill="rgba(0,255,163,0.03)"/>
+          <line x1="10" y1="10" x2="18" y2="18" stroke="#00FFA3" stroke-width="1.2"/>
+          <line x1="18" y1="10" x2="10" y2="18" stroke="#00FFA3" stroke-width="1.2"/>
+        </svg>
+        <div class="lc-title">DELETE ACCOUNT</div>
+        <div class="lc-desc">Request complete deletion of your account and all associated data. Processed within 30 days per our retention policy.</div>
+        <div class="lc-arrow">→</div>
+      </a>
+
+      <a href="mailto:legal@aychlabs.com" class="legal-card">
+        <svg class="lc-icon" viewBox="0 0 28 28" fill="none">
+          <rect x="3" y="6" width="22" height="16" rx="2" stroke="rgba(0,255,163,0.4)" stroke-width="1" fill="rgba(0,255,163,0.03)"/>
+          <polyline points="3,8 14,16 25,8" stroke="#00FFA3" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="lc-title">LEGAL CONTACT</div>
+        <div class="lc-desc">Questions about terms, privacy rights, data requests, or arbitration? Reach our legal team directly at legal@aychlabs.com.</div>
+        <div class="lc-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px">
+        <polygon points="12,2 22,7 22,17 12,22 2,17 2,7" fill="rgba(0,255,163,0.06)" stroke="rgba(0,255,163,0.4)" stroke-width="1"/>
+        <text x="12" y="15.5" text-anchor="middle" font-family="Orbitron" font-weight="900" font-size="8" fill="white">H</text>
+      </svg>
+      <div class="footer-wordmark">AYCH <span>LABS</span></div>
+    </div>
+    <div class="footer-links">
+      <a href="privacy-policy.html">PRIVACY POLICY</a>
+      <a href="terms-of-service.html">TERMS OF SERVICE</a>
+      <a href="delete-account.html">DELETE ACCOUNT</a>
+      <a href="mailto:support@aychlabs.com">SUPPORT</a>
+      <a href="mailto:legal@aychlabs.com">LEGAL</a>
+    </div>
+    <div class="footer-legal">© 2026 AYCH LABS INC. · ALL RIGHTS RESERVED · BUILD 2026.06.04</div>
+  </div>
+</footer>
+
+</body>
+</html>

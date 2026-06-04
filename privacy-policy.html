@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Family Rewards · Aych Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #FAF8F3; --warm-white: #FFFDF9; --ink: #1C1A16; --ink-muted: #5A5650;
+  --ink-faint: #9B9690; --gold: #C8942A; --gold-light: #F5E9CC; --teal: #1D7A6A;
+  --teal-light: #E0F2EE; --red: #C0392B; --red-light: #FDECEA;
+  --border: rgba(28,26,22,0.1); --border-strong: rgba(28,26,22,0.2);
+  --green: #00FFA3; --bg: #0A0D12;
+}
+html { scroll-behavior: smooth; }
+/* ── NAV ── */
+.al-nav {
+  background: rgba(10,13,18,0.97);
+  border-bottom: 1px solid rgba(0,255,163,0.12);
+  padding: 0 2rem;
+  font-family: "Share Tech Mono", monospace;
+}
+.al-nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.al-nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.al-nav-wordmark { font-family: "Orbitron", monospace; font-weight: 700; font-size: 14px; color: #fff; letter-spacing: 0.12em; }
+.al-nav-wordmark span { color: #00FFA3; }
+.al-nav-links { display: flex; gap: 24px; list-style: none; }
+.al-nav-links a { font-size: 9px; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.al-nav-links a:hover, .al-nav-links a.active { color: #00FFA3; }
+.al-nav-badge { font-size: 9px; letter-spacing: 0.12em; color: rgba(0,255,163,0.5); border: 1px solid rgba(0,255,163,0.2); padding: 3px 10px; }
+/* ── CONTENT STYLES (original policy) ── */
+body { font-family: "DM Sans", sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.75; font-weight: 300; }
+.policy-hero { background: var(--warm-white); border-bottom: 1px solid var(--border); padding: 3.5rem 2rem 3rem; text-align: center; }
+.policy-hero-inner { max-width: 680px; margin: 0 auto; }
+.policy-hero h1 { font-family: "Fraunces", serif; font-size: clamp(2rem,5vw,3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1rem; }
+.policy-hero h1 em { font-style: italic; color: var(--gold); }
+.policy-hero p { color: var(--ink-muted); font-size: 15px; max-width: 520px; margin: 0 auto 1.5rem; }
+.meta-row { display: flex; justify-content: center; gap: 2rem; font-size: 13px; color: var(--ink-faint); flex-wrap: wrap; }
+.meta-row span { display: flex; align-items: center; gap: 6px; }
+.page { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; display: grid; grid-template-columns: 220px 1fr; gap: 3rem; align-items: start; }
+.toc { position: sticky; top: 1.5rem; }
+.toc-title { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem; }
+.toc ol { list-style: none; border-left: 1px solid var(--border-strong); padding-left: 1rem; }
+.toc ol li { margin-bottom: 0.35rem; }
+.toc ol li a { font-size: 13px; color: var(--ink-muted); text-decoration: none; line-height: 1.4; display: block; transition: color 0.15s; }
+.toc ol li a:hover { color: var(--gold); }
+.toc-footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 12px; color: var(--ink-faint); line-height: 1.5; }
+.toc-footer a { color: var(--teal); text-decoration: none; }
+.content section { margin-bottom: 3rem; }
+.content section:last-child { margin-bottom: 0; }
+.content h2 { font-family: "Fraunces", serif; font-size: 1.35rem; font-weight: 400; color: var(--ink); line-height: 1.3; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); scroll-margin-top: 1.5rem; }
+.content h2 .section-num { font-family: "DM Sans", sans-serif; font-size: 12px; font-weight: 500; color: var(--gold); display: block; letter-spacing: 0.05em; margin-bottom: 2px; }
+.content p { margin-bottom: 0.9rem; color: var(--ink); font-size: 15px; }
+.content p:last-child { margin-bottom: 0; }
+.content ul, .content ol { padding-left: 1.4rem; margin-bottom: 0.9rem; font-size: 15px; }
+.content ul li, .content ol li { margin-bottom: 0.4rem; color: var(--ink); }
+.content ul li::marker { color: var(--gold); }
+.content strong { font-weight: 500; }
+.content a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+.callout { border-radius: 10px; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; line-height: 1.6; }
+.callout strong { display: block; margin-bottom: 0.3rem; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
+.callout-coppa { background: var(--red-light); border: 1px solid rgba(192,57,43,0.2); color: var(--red); }
+.callout-coppa strong { color: var(--red); }
+.callout-info { background: var(--teal-light); border: 1px solid rgba(29,122,106,0.2); color: var(--teal); }
+.callout-info strong { color: var(--teal); }
+.callout-gold { background: var(--gold-light); border: 1px solid rgba(200,148,42,0.25); color: #7A5A10; }
+.callout-gold strong { color: #7A5A10; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 1.25rem 0; }
+.data-table th { text-align: left; font-weight: 500; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border-strong); }
+.data-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); line-height: 1.5; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(28,26,22,0.02); }
+.contact-card { background: var(--warm-white); border: 1px solid var(--border-strong); border-radius: 12px; padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+.contact-item label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); display: block; margin-bottom: 3px; font-weight: 500; }
+.contact-item p { font-size: 14px; color: var(--ink); margin: 0; }
+.contact-item a { color: var(--teal); }
+/* ── FOOTER ── */
+.al-footer { background: #0A0D12; color: rgba(255,255,255,0.3); text-align: center; padding: 2.5rem 2rem; font-family: "Share Tech Mono", monospace; font-size: 10px; letter-spacing: 0.12em; border-top: 1px solid rgba(0,255,163,0.1); }
+.al-footer a { color: rgba(0,255,163,0.5); text-decoration: none; }
+.al-footer a:hover { color: #00FFA3; }
+.al-footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 12px; flex-wrap: wrap; }
+@media (max-width: 680px) {
+  .page { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem 4rem; }
+  .toc { position: static; background: var(--warm-white); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+  .contact-card { grid-template-columns: 1fr; }
+  .meta-row { flex-direction: column; align-items: center; gap: 0.4rem; }
+  .al-nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="al-nav">
+  <div class="al-nav-inner">
+    <a class="al-nav-logo" href="index.html">
+      <svg viewBox="0 0 32 32" fill="none" style="width:28px;height:28px">
+        <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="rgba(0,255,163,0.06)" stroke="rgba(0,255,163,0.5)" stroke-width="1"/>
+        <text x="16" y="20" text-anchor="middle" font-family="Orbitron" font-weight="900" font-size="11" fill="white">H</text>
+      </svg>
+      <div class="al-nav-wordmark">AYCH <span>LABS</span></div>
+    </a>
+    <ul class="al-nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#apps">APPS</a></li>
+      <li><a href="privacy-policy.html" class="active">PRIVACY POLICY</a></li>
+      <li><a href="terms-of-service.html">TERMS OF SERVICE</a></li>
+      <li><a href="delete-account.html">DELETE ACCOUNT</a></li>
+    </ul>
+    <div class="al-nav-badge">COPPA COMPLIANT</div>
+  </div>
+</nav>
+
+<div class="policy-hero">
+  <div class="policy-hero-inner">
+    <h1>Privacy <em>Policy</em></h1>
+    <p>We take your family's privacy seriously. This policy explains what data we collect, how we use it, and the special protections we apply for children under 13.</p>
+    <div class="meta-row">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 8h6M5 11h4M8 2v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Effective Date: June 3, 2025
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v4l2.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Last Updated: June 3, 2025
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2L3 5v4c0 2.8 2.2 4.8 5 5 2.8-.2 5-2.2 5-5V5L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        COPPA Compliant
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#coppa">COPPA &amp; Children's Privacy</a></li>
+      <li><a href="#collection">Information We Collect</a></li>
+      <li><a href="#use">How We Use Your Information</a></li>
+      <li><a href="#sharing">Sharing &amp; Disclosure</a></li>
+      <li><a href="#firebase">Firebase &amp; Third Parties</a></li>
+      <li><a href="#photos">Task Completion Photos</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#changes">Policy Changes</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+    <div class="toc-footer">
+      Questions about this policy?<br>
+      <a href="mailto:privacy@aychlabs.com">privacy@aychlabs.com</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- 1. Overview -->
+    <section id="overview">
+      <h2><span class="section-num">01</span>Overview</h2>
+      <p>This Privacy Policy describes how <strong>Aych Labs</strong> ("we," "us," or "our") collects, uses, and protects information in connection with the <strong>Family Rewards</strong> mobile application (the "App"). Aych Labs is a software company dedicated to building tools that help families thrive.</p>
+      <p>Family Rewards is a chore and rewards tracking application designed for use by parents and their children within a supervised family environment. Parents create and manage the account; children participate in earning and tracking points under direct parental oversight.</p>
+      <p>By using the App, you agree to the practices described in this Privacy Policy. If you do not agree, please discontinue use of the App. We encourage parents to read this policy carefully before allowing their children to use the App.</p>
+    </section>
+
+    <!-- 2. COPPA -->
+    <section id="coppa">
+      <h2><span class="section-num">02</span>COPPA &amp; Children's Privacy</h2>
+
+      <div class="callout callout-coppa">
+        <strong>Important Notice — Children Under 13</strong>
+        Family Rewards is designed to be used by children under 13 only under direct parental supervision, with the parent or legal guardian as the account holder. We comply fully with the Children's Online Privacy Protection Act (COPPA), 15 U.S.C. §§ 6501–6506, and the FTC's implementing regulations at 16 C.F.R. Part 312.
+      </div>
+
+      <p><strong>No accounts for children under 13.</strong> Children under the age of 13 do not create their own accounts. All accounts are created and controlled exclusively by a parent or legal guardian (the "Parent Account Holder"). Children participate in the App only as named family members under a parent-controlled account.</p>
+
+      <p><strong>Verifiable Parental Consent.</strong> Before any personal information relating to a child under 13 is collected — including the child's name as a family member or any task completion data — we obtain verifiable parental consent from the Parent Account Holder during the account creation process. By creating an account and adding a child's name to the App, you represent and warrant that:</p>
+      <ul>
+        <li>You are the parent or legal guardian of the child;</li>
+        <li>You have authority to provide consent on the child's behalf; and</li>
+        <li>You consent to our collection and use of the child's information as described in this policy.</li>
+      </ul>
+
+      <p><strong>What information we collect from or about children.</strong> The only information we collect that is associated with a child under 13 is:</p>
+      <ul>
+        <li>The child's <strong>first name</strong> (or a nickname chosen by the parent) as entered by the Parent Account Holder;</li>
+        <li><strong>Task completion records</strong> (which tasks were marked complete and when), entered or confirmed by the Parent Account Holder;</li>
+        <li><strong>Point balances</strong> associated with each named child; and</li>
+        <li>Optionally, <strong>task completion photos</strong> uploaded by the parent to document completed chores (see Section 7).</li>
+      </ul>
+
+      <p>We do <strong>not</strong> collect from children: email addresses, phone numbers, precise geolocation data, social media identifiers, government identification numbers, payment information, or any persistent identifiers used for behavioral advertising.</p>
+
+      <p><strong>No behavioral advertising targeting children.</strong> We do not use personal information collected from children under 13 for behavioral advertising or targeted marketing. We do not share such information with third-party advertising networks.</p>
+
+      <p><strong>Parental rights under COPPA.</strong> As the Parent Account Holder, you have the right at any time to:</p>
+      <ul>
+        <li><strong>Review</strong> the personal information we have collected about your child;</li>
+        <li><strong>Correct or update</strong> inaccurate information about your child;</li>
+        <li><strong>Request deletion</strong> of personal information collected about your child; and</li>
+        <li><strong>Refuse further collection</strong> of your child's information by deleting the family member profile or closing the account.</li>
+      </ul>
+
+      <p>To exercise any of these rights, contact us at <a href="mailto:privacy@aychlabs.com">privacy@aychlabs.com</a>. We will respond to verified parental requests within 30 days. We will take reasonable steps to verify that the requestor is the child's parent or legal guardian before disclosing or deleting information.</p>
+
+      <div class="callout callout-info">
+        <strong>Withdrawing Consent</strong>
+        You may withdraw your consent to our collection and use of your child's personal information at any time by deleting the child's profile within the App or by contacting us. Withdrawing consent does not affect the lawfulness of processing that occurred prior to withdrawal.
+      </div>
+    </section>
+
+    <!-- 3. Information Collected -->
+    <section id="collection">
+      <h2><span class="section-num">03</span>Information We Collect</h2>
+      <p>We collect only the information necessary to provide the App's functionality. The categories of information we collect are:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Specific Data</th>
+            <th>Who Provides It</th>
+            <th>Required?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Account Information</strong></td>
+            <td>Parent's email address; password (stored as a hash, never in plain text)</td>
+            <td>Parent Account Holder</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Family Member Names</strong></td>
+            <td>First name or nickname for each child or family member added to the account</td>
+            <td>Parent Account Holder</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Task &amp; Chore Data</strong></td>
+            <td>Task names, descriptions, assigned family member, completion status, completion timestamps</td>
+            <td>Parent Account Holder</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Point Balances</strong></td>
+            <td>Point values assigned to tasks; current point totals per family member</td>
+            <td>Parent Account Holder</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Task Completion Photos</strong></td>
+            <td>Photos uploaded to document a completed chore</td>
+            <td>Parent Account Holder (optional)</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Device &amp; Usage Data</strong></td>
+            <td>Device type and OS version; App version; crash reports and error logs; general usage analytics (e.g., features accessed — no behavioral profiling)</td>
+            <td>Collected automatically</td>
+            <td>Yes (for App function &amp; improvement)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Information we do not collect.</strong> We do not collect Social Security numbers, financial account numbers, payment card data, biometric data, precise GPS location, or data from third-party social networks. We do not use advertising SDKs or track users across third-party apps and websites.</p>
+    </section>
+
+    <!-- 4. How We Use -->
+    <section id="use">
+      <h2><span class="section-num">04</span>How We Use Your Information</h2>
+      <p>We use the information we collect solely for the following purposes:</p>
+      <ul>
+        <li><strong>Providing the App.</strong> To authenticate your account, display family member profiles, manage tasks and chores, calculate and display point balances, and enable the full functionality of the App.</li>
+        <li><strong>Syncing data.</strong> To synchronize your family's data across devices linked to your account via Firebase (see Section 6).</li>
+        <li><strong>Improving the App.</strong> To analyze aggregate, de-identified usage patterns and crash reports to fix bugs and improve App performance and features.</li>
+        <li><strong>Customer support.</strong> To respond to your questions, requests, or support tickets.</li>
+        <li><strong>Legal compliance.</strong> To comply with applicable law, regulations (including COPPA), and valid legal process.</li>
+        <li><strong>Safety.</strong> To detect, investigate, and prevent fraudulent, abusive, or illegal activity.</li>
+      </ul>
+
+      <p>We do <strong>not</strong> use your information for behavioral advertising, sale to data brokers, profiling, or any purpose incompatible with the purposes listed above.</p>
+    </section>
+
+    <!-- 5. Sharing -->
+    <section id="sharing">
+      <h2><span class="section-num">05</span>Sharing &amp; Disclosure</h2>
+      <p>We do not sell your personal information — or your children's personal information — to any third party. We share information only in the limited circumstances below:</p>
+      <ul>
+        <li><strong>Service providers.</strong> We share data with trusted third-party vendors who assist us in operating the App (such as Firebase — see Section 6). These providers are contractually bound to use your data only to provide services to us and not for their own commercial purposes.</li>
+        <li><strong>Legal requirements.</strong> We may disclose information if required to do so by law, court order, or governmental authority, or to protect the rights, property, or safety of Aych Labs, our users, or the public.</li>
+        <li><strong>Business transfers.</strong> In the event of a merger, acquisition, or sale of all or substantially all of our assets, your information may be transferred as part of that transaction. We will notify you of any such change and any resulting changes to this Privacy Policy.</li>
+        <li><strong>With your consent.</strong> We may share information with third parties when you have given us your explicit consent to do so.</li>
+      </ul>
+      <p>We do <strong>not</strong> share children's personal information with third-party advertisers or analytics services that engage in behavioral advertising.</p>
+    </section>
+
+    <!-- 6. Firebase -->
+    <section id="firebase">
+      <h2><span class="section-num">06</span>Firebase &amp; Third-Party Services</h2>
+      <p>Family Rewards uses <strong>Google Firebase</strong> to power its backend infrastructure. Firebase is a platform developed by Google LLC. The Firebase services we use include:</p>
+      <ul>
+        <li><strong>Firebase Authentication</strong> — to securely manage parent login credentials;</li>
+        <li><strong>Firebase Firestore</strong> — as our cloud database for storing account, task, and points data;</li>
+        <li><strong>Firebase Storage</strong> — to store optional task completion photos; and</li>
+        <li><strong>Firebase Crashlytics</strong> — to collect anonymized crash reports that help us diagnose and fix technical issues.</li>
+      </ul>
+      <p>Data stored in Firebase is housed in Google's cloud infrastructure. Google processes this data as our data processor, subject to a Data Processing Agreement and Google's applicable terms of service. For more information about how Google handles data, please review the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy &amp; Security documentation</a>.</p>
+
+      <div class="callout callout-gold">
+        <strong>Firebase &amp; COPPA</strong>
+        We have configured our Firebase instance to comply with COPPA requirements. We do not enable Firebase features that engage in interest-based advertising or that share children's data with Google for advertising purposes. Firebase Analytics is either disabled or configured in a privacy-preserving mode that does not collect advertising identifiers.
+      </div>
+
+      <p>We do not use any other third-party analytics, advertising, or tracking SDKs in the App at this time. If this changes, we will update this Privacy Policy and obtain any required parental consent before activating such services.</p>
+    </section>
+
+    <!-- 7. Photos -->
+    <section id="photos">
+      <h2><span class="section-num">07</span>Task Completion Photos</h2>
+      <p>Parents have the option to attach a photo to a completed task to document that a chore was done. This feature is entirely optional and disabled by default.</p>
+      <p>If you choose to upload photos:</p>
+      <ul>
+        <li>Photos are stored securely in Firebase Storage, associated with your family's account.</li>
+        <li>Photos are accessible only to the Parent Account Holder within the App.</li>
+        <li>We do <strong>not</strong> use photos for any purpose other than displaying them within your account.</li>
+        <li>Photos are <strong>not</strong> shared with third parties, used to train AI/ML models, or analyzed for any purpose beyond storage and retrieval.</li>
+        <li>Photos are deleted when you delete the associated task, remove the family member profile, or close your account.</li>
+      </ul>
+      <p><strong>Photos of children:</strong> If task completion photos include images of children, those images constitute personal information about the child. By uploading such photos, the Parent Account Holder consents to their storage on our behalf as described in this policy. We strongly recommend that parents review any photos before uploading and avoid sharing images they would not want stored in the cloud.</p>
+    </section>
+
+    <!-- 8. Retention -->
+    <section id="retention">
+      <h2><span class="section-num">08</span>Data Retention</h2>
+      <p>We retain your information for as long as your account is active or as needed to provide the App's services. Specifically:</p>
+      <ul>
+        <li><strong>Account and family data</strong> are retained until you delete your account or request deletion.</li>
+        <li><strong>Task and points history</strong> is retained within your account so you can review past activity. You may delete individual task records within the App at any time.</li>
+        <li><strong>Photos</strong> are retained until you delete them within the App or delete your account.</li>
+        <li><strong>Crash logs and technical data</strong> are retained for up to 90 days for debugging purposes and then automatically deleted.</li>
+      </ul>
+      <p>When you delete your account, we will delete or anonymize all personal information associated with your account — including all child-related data — within 30 days, except where retention is required by law or for legitimate fraud prevention purposes.</p>
+      <p>To request account deletion, use the "Delete Account" option in the App settings, or contact us at <a href="mailto:privacy@aychlabs.com">privacy@aychlabs.com</a>.</p>
+    </section>
+
+    <!-- 9. Security -->
+    <section id="security">
+      <h2><span class="section-num">09</span>Security</h2>
+      <p>We take the security of your family's information seriously and implement reasonable technical and organizational safeguards, including:</p>
+      <ul>
+        <li><strong>Encryption in transit:</strong> All data transmitted between the App and our servers is encrypted using TLS (Transport Layer Security).</li>
+        <li><strong>Encryption at rest:</strong> Data stored in Firebase is encrypted at rest by Google's infrastructure.</li>
+        <li><strong>Authentication:</strong> Account access is protected by password authentication managed through Firebase Authentication. We encourage you to use a strong, unique password.</li>
+        <li><strong>Access controls:</strong> Only authorized Aych Labs personnel with a legitimate need may access account data, and such access is logged and audited.</li>
+        <li><strong>Firebase Security Rules:</strong> We use Firebase Security Rules to ensure that users can access only their own family's data.</li>
+      </ul>
+      <p>No method of electronic transmission or storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee absolute security. If you believe your account has been compromised, please contact us immediately at <a href="mailto:privacy@aychlabs.com">privacy@aychlabs.com</a>.</p>
+    </section>
+
+    <!-- 10. Rights -->
+    <section id="rights">
+      <h2><span class="section-num">10</span>Your Rights</h2>
+      <p>Depending on your jurisdiction, you may have additional rights regarding your personal information. These may include:</p>
+      <ul>
+        <li><strong>Access:</strong> The right to request a copy of the personal information we hold about you or your child.</li>
+        <li><strong>Correction:</strong> The right to request correction of inaccurate personal information.</li>
+        <li><strong>Deletion:</strong> The right to request deletion of your personal information (including all data about your child) — subject to certain exceptions required by law.</li>
+        <li><strong>Portability:</strong> The right to request a machine-readable export of your data.</li>
+        <li><strong>Objection or restriction:</strong> The right to object to or restrict certain processing of your data.</li>
+        <li><strong>Withdrawal of consent:</strong> Where processing is based on consent, the right to withdraw consent at any time without affecting prior processing.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@aychlabs.com">privacy@aychlabs.com</a>. We will respond within 30 days. We may need to verify your identity before processing your request. We will never discriminate against you for exercising your privacy rights.</p>
+      <p><strong>California residents</strong> may have additional rights under the California Consumer Privacy Act (CCPA) / California Privacy Rights Act (CPRA). We do not sell or share personal information for cross-context behavioral advertising. California residents may submit requests to know, delete, or correct their data as described above.</p>
+      <p><strong>EEA/UK residents:</strong> If you are located in the European Economic Area or United Kingdom, you may have rights under the GDPR or UK GDPR. Our legal basis for processing your data is performance of a contract (to provide the App), compliance with legal obligations, and — for children's data — your explicit parental consent. You may lodge a complaint with your local data protection authority.</p>
+    </section>
+
+    <!-- 11. Changes -->
+    <section id="changes">
+      <h2><span class="section-num">11</span>Policy Changes</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, the App's features, or applicable law. When we make material changes, we will:</p>
+      <ul>
+        <li>Post the updated policy within the App and on our website at <a href="https://aychlabs.com">aychlabs.com</a>;</li>
+        <li>Update the "Last Updated" date at the top of this policy; and</li>
+        <li>Notify Parent Account Holders via the email address on file for significant changes — particularly any changes that affect the collection or use of children's personal information, for which we will obtain fresh parental consent if required by COPPA.</li>
+      </ul>
+      <p>Your continued use of the App after the effective date of a revised policy constitutes your acceptance of the updated terms. If you do not agree with any changes, you may close your account as described in Section 8.</p>
+    </section>
+
+    <!-- 12. Contact -->
+    <section id="contact">
+      <h2><span class="section-num">12</span>Contact Us</h2>
+      <p>If you have questions, concerns, or requests relating to this Privacy Policy or our privacy practices — including requests to exercise parental rights under COPPA — please contact us:</p>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <label>Company</label>
+          <p>Aych Labs</p>
+        </div>
+        <div class="contact-item">
+          <label>Website</label>
+          <p><a href="https://aychlabs.com" target="_blank">aychlabs.com</a></p>
+        </div>
+        <div class="contact-item">
+          <label>Privacy Contact</label>
+          <p><a href="mailto:privacy@aychlabs.com">privacy@aychlabs.com</a></p>
+        </div>
+        <div class="contact-item">
+          <label>Response Time</label>
+          <p>Within 30 days</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 1rem; font-size: 14px; color: var(--ink-muted);">For urgent matters relating to the safety or privacy of a child, please mark your email with the subject line <strong>"URGENT — Child Privacy."</strong> We will prioritize such requests.</p>
+    </section>
+
+  </main>
+</div>
+
+<nav class="al-footer">
+  <div class="al-footer-links">
+    <a href="index.html">AYCHLABS.COM</a>
+    <a href="privacy-policy.html">PRIVACY POLICY</a>
+    <a href="terms-of-service.html">TERMS OF SERVICE</a>
+    <a href="delete-account.html">DELETE ACCOUNT</a>
+    <a href="mailto:privacy@aychlabs.com">PRIVACY@AYCHLABS.COM</a>
+    <a href="mailto:legal@aychlabs.com">LEGAL@AYCHLABS.COM</a>
+  </div>
+  <div>© 2026 AYCH LABS INC. &nbsp;·&nbsp; ALL RIGHTS RESERVED &nbsp;·&nbsp; FAMILY REWARDS IS A PRODUCT OF AYCH LABS</div>
+</nav>
+
+</body>
+</html>

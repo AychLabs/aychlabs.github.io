@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Aych Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #FAF8F3; --warm-white: #FFFDF9; --ink: #1C1A16; --ink-muted: #5A5650;
+  --ink-faint: #9B9690; --gold: #C8942A; --gold-light: #F5E9CC; --teal: #1D7A6A;
+  --teal-light: #E0F2EE; --slate: #2C4A6E; --slate-light: #E8EEF5;
+  --red: #C0392B; --red-light: #FDECEA;
+  --border: rgba(28,26,22,0.1); --border-strong: rgba(28,26,22,0.2);
+}
+html { scroll-behavior: smooth; }
+body { font-family: "DM Sans", sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.75; font-weight: 300; }
+
+/* ── NAV ── */
+.al-nav { background: rgba(10,13,18,0.97); border-bottom: 1px solid rgba(0,255,163,0.12); padding: 0 2rem; font-family: "Share Tech Mono", monospace; }
+.al-nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.al-nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.al-nav-wordmark { font-family: "Orbitron", monospace; font-weight: 700; font-size: 14px; color: #fff; letter-spacing: 0.12em; }
+.al-nav-wordmark span { color: #00FFA3; }
+.al-nav-links { display: flex; gap: 24px; list-style: none; }
+.al-nav-links a { font-size: 9px; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.al-nav-links a:hover, .al-nav-links a.active { color: #00FFA3; }
+.al-nav-badge { font-size: 9px; letter-spacing: 0.12em; color: rgba(44,74,110,0.9); border: 1px solid rgba(44,74,110,0.4); padding: 3px 10px; background: rgba(44,74,110,0.15); }
+
+/* ── HERO ── */
+.policy-hero { background: var(--warm-white); border-bottom: 1px solid var(--border); padding: 3.5rem 2rem 3rem; text-align: center; }
+.policy-hero-inner { max-width: 680px; margin: 0 auto; }
+.policy-hero h1 { font-family: "Fraunces", serif; font-size: clamp(2rem,5vw,3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1rem; }
+.policy-hero h1 em { font-style: italic; color: var(--slate); }
+.policy-hero p { color: var(--ink-muted); font-size: 15px; max-width: 520px; margin: 0 auto 1.5rem; }
+.meta-row { display: flex; justify-content: center; gap: 2rem; font-size: 13px; color: var(--ink-faint); flex-wrap: wrap; }
+.meta-row span { display: flex; align-items: center; gap: 6px; }
+
+/* ── LAYOUT ── */
+.page { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; display: grid; grid-template-columns: 220px 1fr; gap: 3rem; align-items: start; }
+.toc { position: sticky; top: 1.5rem; }
+.toc-title { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem; }
+.toc ol { list-style: none; border-left: 1px solid var(--border-strong); padding-left: 1rem; }
+.toc ol li { margin-bottom: 0.35rem; }
+.toc ol li a { font-size: 13px; color: var(--ink-muted); text-decoration: none; line-height: 1.4; display: block; transition: color 0.15s; }
+.toc ol li a:hover { color: var(--slate); }
+.toc-footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 12px; color: var(--ink-faint); line-height: 1.5; }
+.toc-footer a { color: var(--teal); text-decoration: none; }
+.toc-footer a:hover { text-decoration: underline; }
+
+/* ── CONTENT ── */
+.content section { margin-bottom: 3rem; }
+.content section:last-child { margin-bottom: 0; }
+.content h2 { font-family: "Fraunces", serif; font-size: 1.35rem; font-weight: 400; color: var(--ink); line-height: 1.3; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); scroll-margin-top: 1.5rem; }
+.content h2 .section-num { font-family: "DM Sans", sans-serif; font-size: 12px; font-weight: 500; color: var(--slate); display: block; letter-spacing: 0.05em; margin-bottom: 2px; }
+.content h3 { font-size: 1rem; font-weight: 500; color: var(--ink); margin: 1.25rem 0 0.5rem; }
+.content p { margin-bottom: 0.9rem; color: var(--ink); font-size: 15px; }
+.content p:last-child { margin-bottom: 0; }
+.content ul, .content ol { padding-left: 1.4rem; margin-bottom: 0.9rem; font-size: 15px; }
+.content ul li, .content ol li { margin-bottom: 0.4rem; color: var(--ink); }
+.content ul li::marker { color: var(--slate); }
+.content strong { font-weight: 500; }
+.content a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── CALLOUTS & COMPONENTS ── */
+.callout { border-radius: 10px; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; line-height: 1.6; }
+.callout strong { display: block; margin-bottom: 0.3rem; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
+.callout-slate { background: var(--slate-light); border: 1px solid rgba(44,74,110,0.2); color: var(--slate); }
+.callout-slate strong { color: var(--slate); }
+.callout-gold { background: var(--gold-light); border: 1px solid rgba(200,148,42,0.25); color: #7A5A10; }
+.callout-gold strong { color: #7A5A10; }
+.callout-red { background: var(--red-light); border: 1px solid rgba(192,57,43,0.2); color: var(--red); }
+.callout-red strong { color: var(--red); }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+.summary-item { background: var(--warm-white); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1rem; }
+.summary-item label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); display: block; margin-bottom: 3px; font-weight: 500; }
+.summary-item p { font-size: 14px; color: var(--ink); margin: 0; }
+.contact-card { background: var(--warm-white); border: 1px solid var(--border-strong); border-radius: 12px; padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+.contact-item label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); display: block; margin-bottom: 3px; font-weight: 500; }
+.contact-item p { font-size: 14px; color: var(--ink); margin: 0; }
+.contact-item a { color: var(--teal); }
+.badge { background: var(--slate-light); color: var(--slate); font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.03em; border: 1px solid rgba(44,74,110,0.2); display: inline-block; }
+
+/* ── FOOTER ── */
+.al-footer { background: #0A0D12; color: rgba(255,255,255,0.3); text-align: center; padding: 2.5rem 2rem; font-family: "Share Tech Mono", monospace; font-size: 10px; letter-spacing: 0.12em; border-top: 1px solid rgba(0,255,163,0.1); }
+.al-footer a { color: rgba(0,255,163,0.5); text-decoration: none; }
+.al-footer a:hover { color: #00FFA3; }
+.al-footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 12px; flex-wrap: wrap; }
+
+@media (max-width: 680px) {
+  .page { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem 4rem; }
+  .toc { position: static; background: var(--warm-white); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .contact-card { grid-template-columns: 1fr; }
+  .meta-row { flex-direction: column; align-items: center; gap: 0.4rem; }
+  .al-nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="al-nav">
+  <div class="al-nav-inner">
+    <a class="al-nav-logo" href="index.html">
+      <svg viewBox="0 0 32 32" fill="none" style="width:28px;height:28px">
+        <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="rgba(0,255,163,0.06)" stroke="rgba(0,255,163,0.5)" stroke-width="1"/>
+        <text x="16" y="20" text-anchor="middle" font-family="Orbitron" font-weight="900" font-size="11" fill="white">H</text>
+      </svg>
+      <div class="al-nav-wordmark">AYCH <span>LABS</span></div>
+    </a>
+    <ul class="al-nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#apps">APPS</a></li>
+      <li><a href="privacy-policy.html">PRIVACY POLICY</a></li>
+      <li><a href="terms-of-service.html" class="active">TERMS OF SERVICE</a></li>
+      <li><a href="delete-account.html">DELETE ACCOUNT</a></li>
+    </ul>
+    <div class="al-nav-badge">LEGAL · v2025</div>
+  </div>
+</nav>
+
+<div class="policy-hero">
+  <div class="policy-hero-inner">
+    <h1>Terms of <em>Service</em></h1>
+    <p>These terms govern your use of all Aych Labs applications. Please read them carefully — they include important information about your rights, our obligations, and how disputes are resolved.</p>
+    <div class="meta-row">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 8h6M5 11h4M8 2v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Effective Date: June 3, 2025
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v4l2.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Last Updated: June 3, 2025
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2L3 5v4c0 2.8 2.2 4.8 5 5 2.8-.2 5-2.2 5-5V5L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        Governing Law: Florida, USA
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#acceptance">Acceptance of Terms</a></li>
+      <li><a href="#definitions">Definitions</a></li>
+      <li><a href="#eligibility">Eligibility &amp; Age</a></li>
+      <li><a href="#accounts">User Accounts</a></li>
+      <li><a href="#acceptable-use">Acceptable Use</a></li>
+      <li><a href="#ip">Intellectual Property</a></li>
+      <li><a href="#ugc">User-Generated Content</a></li>
+      <li><a href="#purchases">Purchases &amp; Subscriptions</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#disclaimers">Disclaimers</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#indemnification">Indemnification</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#disputes">Dispute Resolution</a></li>
+      <li><a href="#governing-law">Governing Law</a></li>
+      <li><a href="#general">General Provisions</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+    <div class="toc-footer">
+      Questions?<br>
+      <a href="mailto:legal@aychlabs.com">legal@aychlabs.com</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- Plain-language summary -->
+    <div class="callout callout-slate" style="margin-bottom: 2rem;">
+      <strong>Plain-Language Summary</strong>
+      These Terms form a binding legal agreement between you and Aych Labs. By downloading or using any Aych Labs app, you accept these terms. Key points: you must be 18+ (or have parental consent) to create an account; you own your content but grant us a license to operate the service; we are not liable for indirect damages; disputes are governed by Florida law. The full terms below control — this summary is for convenience only.
+    </div>
+
+    <!-- 1. Acceptance -->
+    <section id="acceptance">
+      <h2><span class="section-num">01</span>Acceptance of Terms</h2>
+      <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("you" or "User") and <strong>Aych Labs</strong>, a company operating at <a href="https://aychlabs.com">aychlabs.com</a> ("Aych Labs," "we," "us," or "our"), governing your access to and use of any mobile application published, owned, or operated by Aych Labs (each, an "App," collectively the "Apps"), including any related websites, content, features, and services.</p>
+      <p><strong>By downloading, installing, registering for, or using any App, you acknowledge that you have read, understood, and agree to be bound by these Terms.</strong> If you do not agree to these Terms, do not download, install, or use any of our Apps.</p>
+      <p>We may update these Terms from time to time as described in Section 17. Your continued use of any App after changes are posted constitutes your acceptance of the revised Terms.</p>
+    </section>
+
+    <!-- 2. Definitions -->
+    <section id="definitions">
+      <h2><span class="section-num">02</span>Definitions</h2>
+      <ul>
+        <li><strong>"App" / "Apps"</strong> means any mobile application currently or previously published by Aych Labs, including but not limited to Family Rewards, and any future applications we release.</li>
+        <li><strong>"Account"</strong> means the registered user profile you create to access features of an App.</li>
+        <li><strong>"Content"</strong> means all text, images, photos, data, information, and other material.</li>
+        <li><strong>"User Content"</strong> means Content that you submit, upload, or transmit through an App.</li>
+        <li><strong>"Services"</strong> means all features, functionality, and services made available through the Apps.</li>
+        <li><strong>"Subscription"</strong> means any paid recurring access plan for an App or its premium features.</li>
+        <li><strong>"Minor"</strong> means any individual under 18 years of age, or under the age of majority in their jurisdiction, whichever is higher.</li>
+      </ul>
+    </section>
+
+    <!-- 3. Eligibility -->
+    <section id="eligibility">
+      <h2><span class="section-num">03</span>Eligibility &amp; Age Requirements</h2>
+      <p>To create an Account, you must be at least 18 years of age or the age of legal majority in your jurisdiction, whichever is greater. By creating an Account, you represent and warrant that you meet this requirement.</p>
+      <p>If you are between 13 and 17 years of age, you may only use an App with the direct involvement and prior consent of a parent or legal guardian who agrees to these Terms on your behalf. The parent or legal guardian is responsible for all activity under the Account.</p>
+      <p>Our Apps may permit a parent or legal guardian who holds an Account to add children under the age of 13 as named participants within their Account. Children under 13 do not create independent Accounts. All data relating to such children is managed solely by the Account-holding parent or guardian, in accordance with our Privacy Policy and applicable law, including the Children's Online Privacy Protection Act (COPPA).</p>
+
+      <div class="callout callout-warn">
+        <strong>Age Verification</strong>
+        We reserve the right to verify your age at any time and to suspend or terminate any Account we reasonably believe is held by a person who does not meet the applicable age requirements, or whose minor user is being used without proper parental supervision or consent.
+      </div>
+
+      <p>By using any App, you represent that: (a) you have the legal capacity to enter into these Terms; (b) you are not barred from using the Apps under the laws of the United States or any other applicable jurisdiction; and (c) you have not been previously suspended or removed from any App by Aych Labs.</p>
+    </section>
+
+    <!-- 4. Accounts -->
+    <section id="accounts">
+      <h2><span class="section-num">04</span>User Accounts</h2>
+
+      <h3>Account Registration</h3>
+      <p>Certain features of the Apps require you to register for an Account. When registering, you agree to provide accurate, current, and complete information and to keep that information updated. You may not impersonate any person or entity or use a false name or an email address you are not authorized to use.</p>
+
+      <h3>Account Security</h3>
+      <p>You are solely responsible for maintaining the confidentiality of your Account credentials (including your password) and for all activity that occurs under your Account. You agree to:</p>
+      <ul>
+        <li>Choose a strong, unique password and not share it with any third party;</li>
+        <li>Notify us immediately at <a href="mailto:support@aychlabs.com">support@aychlabs.com</a> if you suspect unauthorized access to or use of your Account; and</li>
+        <li>Log out of your Account at the end of each session on shared devices.</li>
+      </ul>
+      <p>Aych Labs will not be liable for any loss or damage arising from unauthorized use of your Account resulting from your failure to safeguard your credentials.</p>
+
+      <h3>One Account Per Person</h3>
+      <p>You may only maintain one Account per App (unless expressly permitted otherwise by a specific App's terms). Creating multiple Accounts to circumvent a suspension, access tier restrictions, or exploit promotional offers is prohibited.</p>
+
+      <h3>Account Transfers</h3>
+      <p>Accounts are personal and non-transferable. You may not sell, transfer, or assign your Account or any Account rights to any other person or entity.</p>
+
+      <h3>Account Suspension and Deletion</h3>
+      <p>You may delete your Account at any time through the App settings or by contacting us. We may suspend or terminate your Account as described in Section 14. Upon deletion or termination, your right to use the App ceases immediately. Certain provisions of these Terms survive termination as described in Section 14.</p>
+    </section>
+
+    <!-- 5. Acceptable Use -->
+    <section id="acceptable-use">
+      <h2><span class="section-num">05</span>Acceptable Use</h2>
+
+      <h3>Permitted Use</h3>
+      <p>Subject to these Terms, Aych Labs grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Apps for your personal, non-commercial purposes. This license does not include any resale or commercial use of the Apps or their Content.</p>
+
+      <h3>Prohibited Conduct</h3>
+      <p>You agree that you will not, and will not allow any third party to:</p>
+      <ul>
+        <li>Use any App for any unlawful purpose or in violation of any applicable local, state, national, or international law or regulation;</li>
+        <li>Violate or infringe the rights of others, including privacy, publicity, intellectual property, or other proprietary rights;</li>
+        <li>Upload, transmit, or distribute any content that is harmful, abusive, harassing, tortious, defamatory, obscene, libelous, invasive of another's privacy, hateful, or racially, ethnically, or otherwise objectionable;</li>
+        <li>Impersonate any person or entity, or falsely state or otherwise misrepresent your affiliation with a person or entity;</li>
+        <li>Transmit any unsolicited or unauthorized advertising, promotional materials, spam, junk mail, or any other form of solicitation;</li>
+        <li>Transmit any material that contains software viruses, worms, Trojan horses, malware, or any other harmful computer code;</li>
+        <li>Interfere with or disrupt the integrity, performance, or security of the Apps or the servers or networks connected to the Apps;</li>
+        <li>Attempt to gain unauthorized access to any portion of the Apps, other Accounts, or computer systems or networks connected to the Apps;</li>
+        <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of any App, except as permitted by applicable law;</li>
+        <li>Copy, modify, adapt, translate, or create derivative works based on any App or its Content without our express written permission;</li>
+        <li>Scrape, crawl, or use automated means to access or collect data from the Apps without our written consent;</li>
+        <li>Use any App to collect or harvest personal information about other users without their consent;</li>
+        <li>Circumvent, disable, or otherwise interfere with security-related features of the Apps, including features that prevent copying of Content or that enforce usage limitations;</li>
+        <li>Sublicense, sell, resell, transfer, assign, or commercially exploit any App or your access to it; or</li>
+        <li>Assist or encourage any third party to engage in any of the above prohibited activities.</li>
+      </ul>
+
+      <h3>Consequences of Misuse</h3>
+      <p>Violation of this Acceptable Use policy may result in immediate suspension or termination of your Account and access to all Apps, potential legal action, and reporting to appropriate law enforcement authorities where required or appropriate.</p>
+    </section>
+
+    <!-- 6. Intellectual Property -->
+    <section id="ip">
+      <h2><span class="section-num">06</span>Intellectual Property</h2>
+
+      <h3>Our Intellectual Property</h3>
+      <p>The Apps and all of their Content, features, and functionality — including but not limited to software, code, text, graphics, logos, icons, images, audio clips, interface design, and the selection and arrangement thereof — are owned by Aych Labs, its licensors, or other providers of such material and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+      <p>The Aych Labs name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of Aych Labs. You may not use these marks without our prior written permission. All other names, logos, product and service names, designs, and slogans on the Apps are the trademarks of their respective owners.</p>
+
+      <h3>Limited License to You</h3>
+      <p>Subject to your compliance with these Terms, we grant you a limited, personal, non-exclusive, non-transferable, non-sublicensable, revocable license to download, install, and use the Apps on devices that you own or control, solely for your personal, non-commercial use. This license does not convey any ownership interest in the Apps or their Content.</p>
+
+      <h3>Feedback</h3>
+      <p>If you submit ideas, suggestions, feedback, or other input regarding the Apps ("Feedback"), you grant Aych Labs a perpetual, irrevocable, worldwide, royalty-free, fully paid-up license to use, reproduce, modify, adapt, publish, translate, distribute, and otherwise exploit the Feedback for any purpose, without any obligation of confidentiality, compensation, or attribution to you. You waive any moral rights in such Feedback to the fullest extent permitted by law.</p>
+
+      <h3>DMCA / Copyright Infringement</h3>
+      <p>If you believe that any Content on the Apps infringes your copyright, please send a notice to <a href="mailto:legal@aychlabs.com">legal@aychlabs.com</a> with the following information: (a) identification of the copyrighted work claimed to be infringed; (b) identification of the allegedly infringing material and its location; (c) your contact information; (d) a statement of good faith belief that the use is not authorized; and (e) a statement, made under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or authorized to act on the owner's behalf.</p>
+    </section>
+
+    <!-- 7. UGC -->
+    <section id="ugc">
+      <h2><span class="section-num">07</span>User-Generated Content</h2>
+
+      <h3>Your Ownership</h3>
+      <p>You retain ownership of any User Content you submit, upload, or transmit through the Apps. Aych Labs does not claim ownership of your User Content.</p>
+
+      <h3>License You Grant Us</h3>
+      <p>By submitting or uploading User Content to the Apps, you grant Aych Labs a non-exclusive, worldwide, royalty-free, sublicensable license to host, store, reproduce, transmit, and display your User Content solely for the purpose of operating and providing the Apps to you. This license is limited to what is technically necessary to deliver the service and does not grant us rights to commercialize your User Content.</p>
+
+      <h3>Your Representations</h3>
+      <p>You represent and warrant that: (a) you own or have all necessary rights and permissions to submit the User Content; (b) the User Content does not infringe any third-party intellectual property, privacy, or other rights; and (c) the User Content complies with these Terms and all applicable laws.</p>
+
+      <h3>Our Right to Remove Content</h3>
+      <p>We reserve the right (but not the obligation) to review, edit, refuse to post, or remove any User Content at our sole discretion, including User Content that we determine violates these Terms or applicable law, or that we find objectionable for any reason. We are not responsible for User Content submitted by you or any other user.</p>
+    </section>
+
+    <!-- 8. Purchases -->
+    <section id="purchases">
+      <h2><span class="section-num">08</span>Purchases &amp; Subscriptions</h2>
+
+      <h3>In-App Purchases</h3>
+      <p>Some Apps may offer paid features, virtual goods, or Subscriptions. All purchases are processed through the applicable platform (Apple App Store or Google Play Store) and are subject to that platform's payment terms and refund policies. Aych Labs is not responsible for billing disputes governed by platform terms.</p>
+
+      <h3>Subscriptions</h3>
+      <p>If you purchase a Subscription, it will renew automatically at the end of each billing period unless you cancel it through your platform account settings before the renewal date. Cancellation takes effect at the end of the current billing period; you will not receive a prorated refund for unused time except as required by law or platform policy.</p>
+
+      <h3>Price Changes</h3>
+      <p>We reserve the right to change Subscription prices at any time. We will provide reasonable advance notice of any price change. Your continued use of a Subscription after the price change takes effect constitutes your acceptance of the new price. If you do not agree to a price change, you must cancel your Subscription before it renews.</p>
+
+      <h3>Refunds</h3>
+      <p>All sales are final except as required by applicable law or the refund policy of your platform provider. If you believe you are entitled to a refund, please contact the applicable platform's support team. For issues related to App functionality, please contact us at <a href="mailto:support@aychlabs.com">support@aychlabs.com</a>.</p>
+
+      <h3>Virtual Goods and Points</h3>
+      <p>Any virtual currency, points, rewards, or virtual goods available in an App have no real-world monetary value, are not redeemable for cash or real goods (except as expressly stated within the App), are non-transferable, and may be modified or eliminated by us at any time without liability to you.</p>
+    </section>
+
+    <!-- 9. Privacy -->
+    <section id="privacy">
+      <h2><span class="section-num">09</span>Privacy</h2>
+      <p>Your privacy is important to us. Our collection, use, and protection of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference. By using any App, you agree to the data practices described in the applicable Privacy Policy.</p>
+      <p>Each App may have its own Privacy Policy. Links to applicable Privacy Policies are available within the relevant App and on our website at <a href="https://aychlabs.com">aychlabs.com</a>. In the event of any conflict between these Terms and a Privacy Policy on the subject of data handling, the Privacy Policy governs.</p>
+
+      <div class="callout callout-info">
+        <strong>Children's Privacy</strong>
+        Where an App is designed for use by children under 13 within a parental Account, our data practices comply with the Children's Online Privacy Protection Act (COPPA). Please review the applicable App's Privacy Policy for details on how children's data is handled and for information on parental rights.
+      </div>
+    </section>
+
+    <!-- 10. Third-Party Services -->
+    <section id="third-party">
+      <h2><span class="section-num">10</span>Third-Party Services &amp; Links</h2>
+      <p>The Apps may use or integrate with third-party services, platforms, or software development kits (SDKs) to deliver functionality — such as cloud infrastructure, authentication, analytics, or payment processing. Your use of such third-party services is subject to those services' own terms of service and privacy policies. Aych Labs is not responsible for the practices of any third-party service provider.</p>
+      <p>The Apps may also contain links to third-party websites or resources. Such links are provided for your convenience only. We have no control over the contents of those sites or resources, and we accept no responsibility for them or for any loss or damage that may arise from your use of them.</p>
+      <p>Your interactions with third parties found through or linked to by the Apps are solely between you and the third party. You agree that Aych Labs shall not be responsible for any loss or damage incurred as the result of any such dealings.</p>
+    </section>
+
+    <!-- 11. Disclaimers -->
+    <section id="disclaimers">
+      <h2><span class="section-num">11</span>Disclaimers</h2>
+
+      <div class="callout callout-warn">
+        <strong>Important — Please Read Carefully</strong>
+        This section limits our warranties. Read it carefully before using any App.
+      </div>
+
+      <p><strong>AS-IS BASIS.</strong> THE APPS AND ALL CONTENT, FEATURES, AND SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, AYCH LABS EXPRESSLY DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
+      <p><strong>No Guarantee of Availability.</strong> We do not warrant that the Apps will be available at all times, that access will be uninterrupted, that errors will be corrected, or that the Apps are free of viruses or other harmful components. We reserve the right to suspend, modify, or discontinue any App or feature at any time without notice or liability.</p>
+      <p><strong>No Professional Advice.</strong> Content within the Apps does not constitute legal, financial, medical, psychological, or other professional advice. Do not rely on any App Content in place of professional guidance tailored to your specific circumstances.</p>
+      <p><strong>Jurisdiction-Specific Rights.</strong> Some jurisdictions do not allow the exclusion of certain warranties, so some of the above exclusions may not apply to you. In such jurisdictions, our liability is limited to the maximum extent permitted by law.</p>
+    </section>
+
+    <!-- 12. Limitation of Liability -->
+    <section id="liability">
+      <h2><span class="section-num">12</span>Limitation of Liability</h2>
+
+      <div class="callout callout-warn">
+        <strong>Important — Please Read Carefully</strong>
+        This section limits the remedies available to you in the event of a dispute. Read it carefully.
+      </div>
+
+      <p><strong>EXCLUSION OF CONSEQUENTIAL DAMAGES.</strong> TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL AYCH LABS, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, LICENSORS, OR SERVICE PROVIDERS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, LOSS OF REVENUE, LOSS OF DATA, LOSS OF GOODWILL, SERVICE INTERRUPTIONS, COMPUTER DAMAGE, OR SYSTEM FAILURE, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OR INABILITY TO USE THE APPS, EVEN IF AYCH LABS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+      <p><strong>CAP ON LIABILITY.</strong> TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE TOTAL AGGREGATE LIABILITY OF AYCH LABS TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THE USE OF OR INABILITY TO USE THE APPS OR THESE TERMS, WHETHER IN CONTRACT, TORT, STRICT LIABILITY, OR OTHERWISE, SHALL NOT EXCEED THE GREATER OF: (A) THE TOTAL AMOUNT YOU PAID TO AYCH LABS IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM; OR (B) ONE HUNDRED DOLLARS (US $100.00).</p>
+      <p><strong>Essential Basis.</strong> The foregoing limitations of liability are a fundamental element of the basis of the bargain between Aych Labs and you. The Apps would not be provided without such limitations, and you agree these limitations are reasonable.</p>
+      <p><strong>Jurisdiction-Specific Rights.</strong> Some jurisdictions do not allow the limitation or exclusion of liability for certain types of damages. If you are a resident of such a jurisdiction, some of the above limitations may not apply to you, and your rights may be different. Nothing in these Terms limits our liability for death or personal injury caused by our negligence, fraud, or any other liability that cannot be limited by law.</p>
+    </section>
+
+    <!-- 13. Indemnification -->
+    <section id="indemnification">
+      <h2><span class="section-num">13</span>Indemnification</h2>
+      <p>To the fullest extent permitted by applicable law, you agree to defend, indemnify, and hold harmless Aych Labs, its officers, directors, employees, agents, licensors, and service providers from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, and fees (including reasonable attorneys' fees) arising out of or relating to:</p>
+      <ul>
+        <li>Your violation of these Terms;</li>
+        <li>Your User Content;</li>
+        <li>Your use of the Apps in a manner not authorized by these Terms;</li>
+        <li>Your violation of any third party's rights, including intellectual property, privacy, or publicity rights; or</li>
+        <li>Any claim that your User Content caused damage to a third party.</li>
+      </ul>
+      <p>We reserve the right to assume the exclusive defense and control of any matter subject to indemnification by you, at your expense, and you agree to cooperate with our defense of such claims. You shall not settle any such claim without our prior written consent.</p>
+    </section>
+
+    <!-- 14. Termination -->
+    <section id="termination">
+      <h2><span class="section-num">14</span>Termination</h2>
+
+      <h3>Termination by You</h3>
+      <p>You may stop using any App at any time and, where applicable, delete your Account through the App's settings or by contacting us at <a href="mailto:support@aychlabs.com">support@aychlabs.com</a>. Termination of your Account does not automatically cancel any active Subscriptions; you must cancel Subscriptions separately through your platform account settings.</p>
+
+      <h3>Termination by Aych Labs</h3>
+      <p>We may suspend or terminate your access to any or all Apps, with or without notice, at our sole discretion, if we believe that:</p>
+      <ul>
+        <li>You have violated these Terms or any applicable law;</li>
+        <li>Your use creates legal risk or liability for Aych Labs or its users;</li>
+        <li>You have provided false or misleading information in connection with your Account; or</li>
+        <li>Continued provision of the Apps is no longer commercially viable.</li>
+      </ul>
+      <p>Where practicable and not prohibited by law or our legal obligations, we will provide you with reasonable advance notice of termination of the entire service.</p>
+
+      <h3>Effect of Termination</h3>
+      <p>Upon termination of your Account or these Terms for any reason: your license to use the Apps immediately terminates; you must cease all use of the Apps and delete all copies from your devices; Aych Labs may delete your Account data in accordance with our Privacy Policy and data retention schedule; and any outstanding obligations, including payment obligations, survive termination.</p>
+
+      <h3>Survival</h3>
+      <p>The following sections survive termination or expiration of these Terms for any reason: Definitions (§2), Intellectual Property (§6), Disclaimers (§11), Limitation of Liability (§12), Indemnification (§13), Dispute Resolution (§15), Governing Law (§16), and General Provisions (§17).</p>
+    </section>
+
+    <!-- 15. Disputes -->
+    <section id="disputes">
+      <h2><span class="section-num">15</span>Dispute Resolution</h2>
+
+      <h3>Informal Resolution First</h3>
+      <p>Before initiating any formal proceeding, you agree to contact us at <a href="mailto:legal@aychlabs.com">legal@aychlabs.com</a> and describe your dispute in reasonable detail. We will make a good-faith effort to resolve the dispute informally within 30 days of receipt of your written notice. This informal process is a prerequisite to any formal proceeding described below.</p>
+
+      <h3>Binding Arbitration</h3>
+      <p>If the dispute is not resolved informally, you and Aych Labs agree that any dispute, claim, or controversy arising out of or relating to these Terms or the use of the Apps (including the interpretation, formation, performance, or breach hereof) shall be resolved by binding individual arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules, except as specified herein. The arbitration shall take place in Orange County, Florida, unless otherwise agreed. Judgment on the arbitration award may be entered in any court of competent jurisdiction.</p>
+
+      <h3>Class Action Waiver</h3>
+      <p><strong>YOU AND AYCH LABS EACH WAIVE THE RIGHT TO A JURY TRIAL AND THE RIGHT TO PARTICIPATE IN A CLASS ACTION OR CLASS-WIDE ARBITRATION.</strong> All claims must be brought in the parties' individual capacities, and not as a plaintiff or class member in any purported class or representative proceeding. This class action waiver is an essential part of the arbitration agreement.</p>
+
+      <h3>Exceptions to Arbitration</h3>
+      <p>Notwithstanding the foregoing, either party may seek injunctive or other equitable relief in a court of competent jurisdiction to prevent the actual or threatened misappropriation of intellectual property rights. Nothing in this Section prevents either party from pursuing claims in small claims court for disputes within the applicable jurisdictional limits.</p>
+
+      <h3>Opt-Out</h3>
+      <p>You may opt out of the arbitration agreement by sending written notice to <a href="mailto:legal@aychlabs.com">legal@aychlabs.com</a> within 30 days of first accepting these Terms. Your notice must include your name, your Account email address, and a clear statement that you wish to opt out of arbitration. Opting out does not affect any other terms.</p>
+    </section>
+
+    <!-- 16. Governing Law -->
+    <section id="governing-law">
+      <h2><span class="section-num">16</span>Governing Law &amp; Venue</h2>
+
+      <div class="summary-grid">
+        <div class="summary-item">
+          <label>Governing Law</label>
+          <p>State of Florida, USA</p>
+        </div>
+        <div class="summary-item">
+          <label>Venue (if applicable)</label>
+          <p>Orange County, Florida</p>
+        </div>
+        <div class="summary-item">
+          <label>Federal Law</label>
+          <p>U.S. Federal Law (where applicable)</p>
+        </div>
+        <div class="summary-item">
+          <label>Arbitration Body</label>
+          <p>American Arbitration Association (AAA)</p>
+        </div>
+      </div>
+
+      <p>These Terms and any dispute arising out of or related to them or the Apps shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions. The United Nations Convention on Contracts for the International Sale of Goods shall not apply.</p>
+      <p>To the extent any dispute is not subject to arbitration under Section 15, you and Aych Labs consent to the exclusive jurisdiction and venue of the state and federal courts located in Orange County, Florida, and waive any objection to such jurisdiction or venue on grounds of inconvenience or otherwise.</p>
+      <p><strong>International Users.</strong> If you access the Apps from outside the United States, you do so on your own initiative and are responsible for compliance with your local laws and regulations. The Apps are controlled and operated from the United States. We make no representation that the Apps or their Content are appropriate or available for use in any particular jurisdiction outside the United States.</p>
+    </section>
+
+    <!-- 17. General -->
+    <section id="general">
+      <h2><span class="section-num">17</span>General Provisions</h2>
+
+      <h3>Entire Agreement</h3>
+      <p>These Terms, together with any App-specific terms, our Privacy Policy, and any other agreements expressly incorporated by reference, constitute the entire agreement between you and Aych Labs regarding the Apps and supersede all prior and contemporaneous agreements, negotiations, and understandings, whether oral or written.</p>
+
+      <h3>Amendments</h3>
+      <p>We reserve the right to modify these Terms at any time. When we make material changes, we will post the revised Terms with an updated "Last Updated" date and, where required by law or where appropriate, notify you via email or in-App notice. Your continued use of any App after the revised Terms take effect constitutes your acceptance. If you do not agree to any revised Terms, you must stop using the Apps.</p>
+
+      <h3>Severability</h3>
+      <p>If any provision of these Terms is held by a court or arbitrator of competent jurisdiction to be unlawful, void, or unenforceable, that provision shall be limited or eliminated to the minimum extent necessary so that these Terms shall otherwise remain in full force and effect and be enforceable.</p>
+
+      <h3>Waiver</h3>
+      <p>No failure or delay by Aych Labs in exercising any right, power, or privilege under these Terms shall operate as a waiver thereof. No waiver of any breach shall be deemed a waiver of any subsequent breach of the same or any other provision.</p>
+
+      <h3>Assignment</h3>
+      <p>You may not assign or transfer these Terms, or any rights or obligations hereunder, without our prior written consent. Aych Labs may freely assign or transfer these Terms without restriction, including in connection with a merger, acquisition, corporate reorganization, or sale of all or substantially all of our assets. These Terms shall be binding upon and inure to the benefit of the parties and their respective permitted successors and assigns.</p>
+
+      <h3>Force Majeure</h3>
+      <p>Aych Labs shall not be liable for any delay or failure to perform resulting from causes outside its reasonable control, including acts of God, natural disasters, war, terrorism, labor disputes, civil unrest, Internet or telecommunications failures, government actions, or changes in law or regulation.</p>
+
+      <h3>No Third-Party Beneficiaries</h3>
+      <p>These Terms are for the sole benefit of you and Aych Labs and do not create any third-party beneficiary rights.</p>
+
+      <h3>Notices</h3>
+      <p>We may provide notices to you via in-App notifications, email to your registered address, or posting to our website. Notices to us must be sent in writing to <a href="mailto:legal@aychlabs.com">legal@aychlabs.com</a>.</p>
+
+      <h3>App Store Terms</h3>
+      <p>If you download an App through the Apple App Store, Google Play Store, or any other platform, that platform's terms and conditions also apply to your use of the App. In the event of a conflict between those platform terms and these Terms, these Terms govern to the maximum extent permitted by the platform.</p>
+    </section>
+
+    <!-- 18. Contact -->
+    <section id="contact">
+      <h2><span class="section-num">18</span>Contact Us</h2>
+      <p>If you have questions about these Terms or need to exercise any rights described herein, please contact us:</p>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <label>Company</label>
+          <p>Aych Labs</p>
+        </div>
+        <div class="contact-item">
+          <label>Website</label>
+          <p><a href="https://aychlabs.com" target="_blank">aychlabs.com</a></p>
+        </div>
+        <div class="contact-item">
+          <label>Legal &amp; Terms</label>
+          <p><a href="mailto:legal@aychlabs.com">legal@aychlabs.com</a></p>
+        </div>
+        <div class="contact-item">
+          <label>General Support</label>
+          <p><a href="mailto:support@aychlabs.com">support@aychlabs.com</a></p>
+        </div>
+      </div>
+
+      <p style="margin-top: 1rem; font-size: 14px; color: var(--ink-muted);">For legal notices, correspondence, and arbitration-related communications, please use <a href="mailto:legal@aychlabs.com">legal@aychlabs.com</a> and include "Legal Notice" in the subject line.</p>
+    </section>
+
+  </main>
+</div>
+
+<nav class="al-footer">
+  <div class="al-footer-links">
+    <a href="index.html">AYCHLABS.COM</a>
+    <a href="privacy-policy.html">PRIVACY POLICY</a>
+    <a href="terms-of-service.html">TERMS OF SERVICE</a>
+    <a href="delete-account.html">DELETE ACCOUNT</a>
+    <a href="mailto:legal@aychlabs.com">LEGAL@AYCHLABS.COM</a>
+    <a href="mailto:support@aychlabs.com">SUPPORT@AYCHLABS.COM</a>
+  </div>
+  <div>© 2026 AYCH LABS INC. &nbsp;·&nbsp; ALL RIGHTS RESERVED &nbsp;·&nbsp; ORANGE COUNTY, FLORIDA</div>
+</nav>
+
+</body>
+</html>
