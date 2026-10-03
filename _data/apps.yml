@@ -1,0 +1,18 @@
+# App registry — single source of truth for nav, footer, and app listings.
+# status: live | in-review | development
+# accent: per-app accent color used on that app's policy pages
+- name: Family Rewards
+  slug: family-rewards
+  status: live
+  accent: "#1D7A6A"
+  play_url: ""          # TODO: paste the Google Play listing URL
+- name: Garden HQ
+  slug: garden-hq
+  status: development
+  accent: "#4C8C3A"     # placeholder until Garden HQ hands off its brand color
+  play_url: ""
+- name: Aych IQ
+  slug: aych-iq
+  status: development
+  accent: "#00C389"     # placeholder until Aych IQ hands off its brand color
+  play_url: ""

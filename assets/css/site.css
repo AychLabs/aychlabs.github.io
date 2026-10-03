@@ -1,0 +1,28 @@
+/* PLACEHOLDER STYLES — scaffold only.
+   The neutral Aych Labs shell gets designed in step 2; replace this file then.
+   Keep the --accent hook: policy.html sets it per app. */
+:root {
+  --ink: #1a1a1a;
+  --muted: #5f5f5f;
+  --rule: #dddddd;
+  --bg: #ffffff;
+  --accent: #444444;
+  --measure: 70ch;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.65 system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+a { color: inherit; }
+.site-nav, .site-footer { padding: 1rem 1.5rem; border-bottom: 1px solid var(--rule); }
+.site-footer { border-top: 1px solid var(--rule); border-bottom: 0; color: var(--muted); font-size: 0.9rem; }
+.site-nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.site-nav ul, .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.site-nav__brand { font-weight: 700; text-decoration: none; }
+.site-main { max-width: var(--measure); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+.policy__app { color: var(--accent); font-weight: 600; margin: 0; }
+.policy__header h1 { margin: 0.25rem 0 0.5rem; line-height: 1.2; }
+.policy__dates { color: var(--muted); font-size: 0.9rem; margin-top: 0; }
+.policy__body h2 { border-top: 2px solid var(--accent); padding-top: 1rem; margin-top: 2.5rem; }
+.policy__body table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+.policy__body th, .policy__body td { border-bottom: 1px solid var(--rule); padding: 0.5rem; text-align: left; vertical-align: top; }
+.policy__contact { margin-top: 3rem; color: var(--muted); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

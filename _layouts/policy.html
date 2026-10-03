@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- assign app = site.data.apps | where: "slug", page.slug | first -%}
+{%- assign accent = page.accent | default: app.accent | default: "#444444" -%}
+{%- case page.doc -%}
+  {%- when "privacy-policy" -%}{%- assign doc_title = "Privacy Policy" -%}
+  {%- when "delete-account" -%}{%- assign doc_title = "Account & Data Deletion" -%}
+  {%- else -%}{%- assign doc_title = page.title -%}
+{%- endcase -%}
+<article class="policy" style="--accent: {{ accent }}">
+  <header class="policy__header">
+    {% if page.app %}<p class="policy__app">{{ page.app }}</p>{% endif %}
+    <h1>{{ doc_title }}</h1>
+    <p class="policy__dates">
+      Effective {{ page.effective | date: "%B %-d, %Y" }}
+      {% if page.updated %}<br>Last updated {{ page.updated | date: "%B %-d, %Y" }}{% endif %}
+    </p>
+  </header>
+  <div class="policy__body">
+    {{ content }}
+  </div>
+  {% if page.contact %}
+  <p class="policy__contact">Questions about this document: <a href="mailto:{{ page.contact }}">{{ page.contact }}</a></p>
+  {% endif %}
+</article>

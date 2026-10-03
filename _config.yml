@@ -1,0 +1,31 @@
+# Aych Labs website — Jekyll config (built automatically by GitHub Pages)
+title: Aych Labs
+description: Apps from Aych Labs
+url: "https://aychlabs.com"
+baseurl: ""
+
+# Clean trailing-slash URLs: folder/page.md -> /folder/page/
+permalink: pretty
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+plugins:
+  - jekyll-redirect-from   # keeps old URLs alive (see CLAUDE.md, "Live URLs")
+
+# Default every page to the base layout
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
+
+# Repo docs and tooling — never published
+exclude:
+  - CLAUDE.md
+  - POLICY_SPEC.md
+  - README.md
+  - tools/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <ul>
+    {% for app in site.data.apps %}{% if app.status == "live" %}
+    <li>{{ app.name }}:
+      <a href="{{ '/' | append: app.slug | append: '/privacy-policy/' | relative_url }}">Privacy</a>,
+      <a href="{{ '/' | append: app.slug | append: '/delete-account/' | relative_url }}">Delete account</a>
+    </li>
+    {% endif %}{% endfor %}
+    <li><a href="{{ '/legal/terms-of-service/' | relative_url }}">Terms of Service</a></li>
+    <li><a href="mailto:support@aychlabs.com">support@aychlabs.com</a></li>
+  </ul>
+  <p>&copy; {{ site.time | date: "%Y" }} Aych Labs</p>
+</footer>
