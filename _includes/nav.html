@@ -1,11 +1,14 @@
 <header class="site-nav">
-  <a class="site-nav__brand" href="{{ '/' | relative_url }}">Aych Labs</a>
-  <nav aria-label="Primary">
-    <ul>
-      {% for app in site.data.apps %}{% if app.status == "live" %}
-      <li><a href="{{ '/' | append: app.slug | append: '/privacy-policy/' | relative_url }}">{{ app.name }}</a></li>
-      {% endif %}{% endfor %}
-      <li><a href="{{ '/legal/terms-of-service/' | relative_url }}">Terms</a></li>
-    </ul>
-  </nav>
+  <div class="wrap site-nav__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      {% include logomark.html %}<span class="brand__word">AYCH LABS</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="{{ '/#apps' | relative_url }}">Apps</a></li>
+        <li><a href="{{ '/legal/terms-of-service/' | relative_url }}">Terms</a></li>
+        <li><a href="mailto:support@aychlabs.com">Support</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>

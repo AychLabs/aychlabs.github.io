@@ -13,8 +13,8 @@ legal pages. Read this before changing anything.
 
 | App | Slug | Status |
 |---|---|---|
-| Family Rewards (name may change before release) | `family-rewards` | Live on Google Play |
-| Garden HQ | `garden-hq` | In development |
+| Family Rewards (name may change before release) | `family-rewards` | Testing; earlier pages live on Google Play |
+| Garden HQ | `garden-hq` | Testing; policies added |
 | Aych IQ | `aych-iq` | In development |
 
 The registry lives in `_data/apps.yml`. Nav and footer read from it, so add or
@@ -87,10 +87,19 @@ of truth. When `POLICY_SPEC.md` changes, re-share it with every app project.
 
 ## Design
 
-- The site shell is **neutral Aych Labs branding**, shared by every page.
-  The design is pending (step 2); `assets/css/site.css` is a placeholder.
+- The site shell is **neutral Aych Labs branding** on a light base, shared by every page.
+  Tokens live at the top of `assets/css/site.css`: paper `#F7F7F5`, surface
+  `#FFFFFF`, ink `#14171C`. Type: IBM Plex Sans (body, headings), IBM Plex Mono
+  (labels), Orbitron (the AYCH LABS wordmark only). Logomark: hex outline with an
+  H drawn as paths (`_includes/logomark.html`), in ink.
+- Light accents: a faint hexagon pattern (from the logomark) fades in behind the
+  hero and policy headers; apps appear as accent-colored icon tiles (monogram
+  placeholders until real icons exist); the footer is ink.
+- Policy pages get a generated "On this page" table of contents from their `##`
+  headings (built in Liquid in `_layouts/policy.html`, no JavaScript).
 - Each app expresses its own identity only through its `accent` color
-  (`_data/apps.yml`, or `accent:` in a page's front matter). Garden HQ and
+  (`_data/apps.yml`, or `accent:` in a page's front matter). Accent is used for
+  bars, dots, and rules, never for text, so any app color stays readable. Garden HQ and
   Family Rewards have their own looks; the dark "Hyperion" style belongs to Aych IQ, not the shell.
 - Policy pages are long legal text: prioritize readability (line length under
   ~75 characters, high contrast, accessible accent usage) over decoration.
@@ -128,6 +137,11 @@ bundle exec jekyll serve      # http://localhost:4000
 ## Roadmap
 
 1. ~~Scaffold repo~~ (done)
-2. Design the neutral Aych Labs shell
+2. ~~Design the neutral Aych Labs shell~~ (done, pending Hal's review)
 3. Migrate Family Rewards pages and ToS to Markdown; add redirects; update Play Console URLs
 4. Publish Garden HQ and Aych IQ policies as their projects hand them off
+5. When an app reaches production: give it a full page at `/<slug>/` (screenshots,
+   features, Google Play badge, and a QR code to the Play listing). Generate the QR
+   as a static SVG committed to `assets/apps/<slug>/` (no JavaScript); show it on
+   desktop only, since a phone visitor can just tap the badge. Add the real app
+   icon via `icon:` in `_data/apps.yml` to replace the monogram tile.

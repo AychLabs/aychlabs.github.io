@@ -1,13 +1,25 @@
 <footer class="site-footer">
-  <ul>
-    {% for app in site.data.apps %}{% if app.status == "live" %}
-    <li>{{ app.name }}:
-      <a href="{{ '/' | append: app.slug | append: '/privacy-policy/' | relative_url }}">Privacy</a>,
-      <a href="{{ '/' | append: app.slug | append: '/delete-account/' | relative_url }}">Delete account</a>
-    </li>
+  <div class="wrap site-footer__grid">
+    <div>
+      <a class="brand brand--small" href="{{ '/' | relative_url }}">{% include logomark.html %}<span class="brand__word">AYCH LABS</span></a>
+      <p class="site-footer__note">Apps from Aych Labs, Florida.</p>
+    </div>
+    {% for app in site.data.apps %}{% if app.policies %}
+    <div>
+      <p class="label">{{ app.name }}</p>
+      <ul>
+        <li><a href="{{ '/' | append: app.slug | append: '/privacy-policy/' | relative_url }}">Privacy policy</a></li>
+        <li><a href="{{ '/' | append: app.slug | append: '/delete-account/' | relative_url }}">Delete account or data</a></li>
+      </ul>
+    </div>
     {% endif %}{% endfor %}
-    <li><a href="{{ '/legal/terms-of-service/' | relative_url }}">Terms of Service</a></li>
-    <li><a href="mailto:support@aychlabs.com">support@aychlabs.com</a></li>
-  </ul>
-  <p>&copy; {{ site.time | date: "%Y" }} Aych Labs</p>
+    <div>
+      <p class="label">Company</p>
+      <ul>
+        <li><a href="{{ '/legal/terms-of-service/' | relative_url }}">Terms of Service</a></li>
+        <li><a href="mailto:support@aychlabs.com">support@aychlabs.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap site-footer__base">&copy; {{ site.time | date: "%Y" }} Aych Labs</div>
 </footer>
