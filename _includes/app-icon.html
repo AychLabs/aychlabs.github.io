@@ -1,0 +1,5 @@
+{%- if include.app.icon and include.app.icon != "" -%}
+<img class="app-icon{% if include.size %} app-icon--{{ include.size }}{% endif %}" src="{{ include.app.icon | relative_url }}" alt="" width="56" height="56">
+{%- else -%}
+<span class="app-icon{% if include.size %} app-icon--{{ include.size }}{% endif %}" style="--accent: {{ include.app.accent }}" aria-hidden="true">{{ include.app.monogram }}</span>
+{%- endif -%}

@@ -1,0 +1,153 @@
+# CLAUDE.md — Aych Labs website (aychlabs.com)
+
+Company site for Aych Labs LLC (a Florida limited liability company; use this
+exact legal name in legal documents) and the hosting home for every Aych Labs app's
+legal pages. Read this before changing anything.
+
+## What this site is for
+
+1. Landing page for Aych Labs at `aychlabs.com`.
+2. Per-app privacy policy and account-deletion pages (required by Google Play).
+3. One company-wide Terms of Service covering all apps.
+
+## Apps
+
+| App | Slug | Status |
+|---|---|---|
+| Family Rewards (name may change before release) | `family-rewards` | Testing; earlier pages live on Google Play |
+| Garden HQ | `garden-hq` | Testing; policies added |
+| Aych IQ | `aych-iq` | In development |
+
+The registry lives in `_data/apps.yml`. Nav and footer read from it, so add or
+update an app there, not by hand-editing templates.
+
+## Stack
+
+- **Jekyll**, built automatically by **GitHub Pages** on push to `main`. No local build step is required to deploy.
+- Custom domain via `CNAME` (`aychlabs.com`). DNS is managed in Squarespace; the
+  `www` CNAME points to `aychlabs.github.io` and four A records point to GitHub Pages.
+- `permalink: pretty` gives clean trailing-slash URLs: `garden-hq/privacy-policy.md` publishes at `/garden-hq/privacy-policy/`.
+- Plugin: `jekyll-redirect-from` (supported natively by GitHub Pages).
+- The repo must **not** contain a `.nojekyll` file, or GitHub skips the build.
+- Local working copy lives on the dev mini PC, cloned from the GitHub repo.
+  Do work on a branch; the Pages branch (Settings → Pages) is live.
+  **Never force-push to the Pages branch.**
+
+## Structure
+
+```
+_config.yml          site config, permalinks, plugins, excludes
+_data/apps.yml       app registry (name, slug, status, accent, Play URL)
+_layouts/default.html   base page: head, nav, main, footer
+_layouts/policy.html    policy pages; sets --accent from front matter or registry
+_includes/           head.html, nav.html, footer.html
+assets/css/site.css  all site styles (currently a placeholder)
+_templates/          blank starter policy files (not published)
+<slug>/              one folder per app: privacy-policy.md, delete-account.md
+legal/               company-wide pages: terms-of-service.md
+tools/check_policy.py   validates policy files against POLICY_SPEC.md
+POLICY_SPEC.md       the handoff spec given to each app project
+```
+
+## URL rules
+
+- Pattern: `/<slug>/privacy-policy/`, `/<slug>/delete-account/`, `/legal/terms-of-service/`.
+- Every URL submitted to Google Play is permanent. **Never move or delete one
+  without adding a `redirect_from` entry on the page that replaces it.**
+- Renaming an app does not require renaming its slug. If a slug ever must
+  change, keep the old path alive with `redirect_from`.
+- Redirects on GitHub Pages are client-side (meta refresh), not HTTP 301s. After
+  moving a URL, also update it in the Play Console; treat redirects as a safety net.
+
+## Live URLs (submitted to Google Play — must keep working)
+
+| Old URL | Now served at | Status |
+|---|---|---|
+| `/privacy-policy` | old `privacy-policy.html` (unchanged) | keep until Family Rewards migrates; then redirect to `/family-rewards/privacy-policy/` |
+| `/delete-account` | old `delete-account.html` (unchanged) | keep until Family Rewards migrates; then redirect to `/family-rewards/delete-account/` |
+| `/garden-hq/privacy-policy/` | `garden-hq/privacy-policy.md` | live; to be entered in Play Console |
+| `/garden-hq/delete-account/` | `garden-hq/delete-account.md` | live; to be entered in Play Console (Data deletion URL) |
+| `/terms-of-service` | `/legal/terms-of-service/` | redirect live (`redirect_from` on the ToS page) |
+
+Update this table whenever a URL is added, moved, or entered in the Play Console.
+
+## Policy handoff process
+
+App-specific policies are written by each app's own Claude project, because it
+knows the app. This project publishes them.
+
+1. The app project has `POLICY_SPEC.md` in its knowledge and delivers
+   `privacy-policy.md` and `delete-account.md` as content-only Markdown.
+2. Place both files in `<slug>/`.
+3. Run `python3 tools/check_policy.py <slug>/*.md` and fix or send back any failures.
+4. If the app is new, add it to `_data/apps.yml`.
+5. Commit and push. Verify the live URLs, then record any Play Console
+   submissions in the Live URLs table above.
+
+Do not rewrite an app's policy content here. Formatting fixes are fine;
+substantive changes go back to the app project so its source stays the source
+of truth. When `POLICY_SPEC.md` changes, re-share it with every app project.
+
+## Design
+
+- The site shell is **neutral Aych Labs branding** on a light base, shared by every page.
+  Tokens live at the top of `assets/css/site.css`: paper `#F7F7F5`, surface
+  `#FFFFFF`, ink `#14171C`. Type: IBM Plex Sans (body, headings), IBM Plex Mono
+  (labels), Orbitron (the AYCH LABS wordmark only). Logomark: hex outline with an
+  H drawn as paths (`_includes/logomark.html`), in ink.
+- Light accents: a faint hexagon pattern (from the logomark) fades in behind the
+  hero and policy headers; apps appear as accent-colored icon tiles (monogram
+  placeholders until real icons exist); the footer is ink.
+- Policy pages get a generated "On this page" table of contents from their `##`
+  headings (built in Liquid in `_layouts/policy.html`, no JavaScript).
+- Each app expresses its own identity only through its `accent` color
+  (`_data/apps.yml`, or `accent:` in a page's front matter). Accent is used for
+  bars, dots, and rules, never for text, so any app color stays readable. Garden HQ and
+  Family Rewards have their own looks; the dark "Hyperion" style belongs to Aych IQ, not the shell.
+- Policy pages are long legal text: prioritize readability (line length under
+  ~75 characters, high contrast, accessible accent usage) over decoration.
+- Hal's preferences: clean, sharp, uncluttered.
+
+## Email addresses used on the site
+
+Mail is hosted on Zoho Mail. Addresses used on the site:
+
+| Address | Type | Delivers to |
+|---|---|---|
+| `support@aychlabs.com` | Mailbox | support |
+| `privacy@aychlabs.com` | Alias | support |
+| `legal@aychlabs.com` | Alias | support |
+
+Never publish an address that isn't in this table. If a new one is needed,
+create it in Zoho first (an alias on `support` is usually enough), then add it here.
+Other Zoho mailboxes (`dev@`, `admin@`, `qa01@`, `reviewer@`) are internal and
+should not appear on the site.
+
+## Local preview (optional)
+
+```
+bundle install
+bundle exec jekyll serve      # http://localhost:4000
+```
+
+## Conventions
+
+- Markdown for content, HTML only in `_layouts/` and `_includes/`.
+- No inline `<style>` blocks in pages; all CSS lives in `assets/css/site.css`.
+- No new front-matter fields on policy pages without updating `POLICY_SPEC.md` and `tools/check_policy.py`.
+- Commit messages: imperative, scoped, e.g. `garden-hq: add privacy policy`.
+
+## Roadmap
+
+1. ~~Scaffold repo~~ (done)
+2. ~~Design the neutral Aych Labs shell~~ (done, pending Hal's review)
+3. ~~Migrate ToS to Markdown with redirect~~ (done). Family Rewards migration waits
+   until the app and its policies are back in sync; its old `.html` pages stay
+   live and untouched until then. When migrating, delete each old `.html` file in
+   the same commit that adds `redirect_from` for its URL (the two would collide).
+4. Publish Garden HQ and Aych IQ policies as their projects hand them off
+5. When an app reaches production: give it a full page at `/<slug>/` (screenshots,
+   features, Google Play badge, and a QR code to the Play listing). Generate the QR
+   as a static SVG committed to `assets/apps/<slug>/` (no JavaScript); show it on
+   desktop only, since a phone visitor can just tap the badge. Add the real app
+   icon via `icon:` in `_data/apps.yml` to replace the monogram tile.

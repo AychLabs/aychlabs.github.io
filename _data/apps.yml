@@ -1,0 +1,33 @@
+# App registry — single source of truth for the landing page, nav, and footer.
+# status:   live | testing | development
+# policies: true once <slug>/privacy-policy.md and delete-account.md exist
+# accent:   app brand color; used for icon tiles, bars, dots, and rules (never body text)
+# monogram: 1-2 letters shown on the placeholder icon tile
+# icon:     path to the real app icon (e.g. /assets/apps/garden-hq/icon.png); replaces the monogram tile when set
+- name: Family Rewards
+  slug: family-rewards
+  monogram: FR
+  icon: ""
+  status: testing
+  policies: false        # flips to true when step 3 migrates its pages
+  accent: "#1D7A6A"
+  tagline: Chores, points, and rewards that keep the whole family on track.
+  play_url: ""
+- name: Garden HQ
+  slug: garden-hq
+  monogram: GH
+  icon: ""
+  status: testing
+  policies: true
+  accent: "#3F6B3A"
+  tagline: Track your plants, get care reminders, and keep every garden's history.
+  play_url: ""
+- name: Aych IQ
+  slug: aych-iq
+  monogram: IQ
+  icon: ""
+  status: development
+  policies: false
+  accent: "#00C389"
+  tagline: A sports app, in development.
+  play_url: ""
