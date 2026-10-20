@@ -1,6 +1,7 @@
 # CLAUDE.md — Aych Labs website (aychlabs.com)
 
-Company site for Aych Labs and the hosting home for every Aych Labs app's
+Company site for Aych Labs LLC (a Florida limited liability company; use this
+exact legal name in legal documents) and the hosting home for every Aych Labs app's
 legal pages. Read this before changing anything.
 
 ## What this site is for
@@ -62,9 +63,11 @@ POLICY_SPEC.md       the handoff spec given to each app project
 
 | Old URL | Now served at | Status |
 |---|---|---|
-| `/privacy-policy` | `/family-rewards/privacy-policy/` | redirect pending (step 3) |
-| `/delete-account` | `/family-rewards/delete-account/` | redirect pending (step 3) |
-| `/terms-of-service` | `/legal/terms-of-service/` | redirect pending (step 3) |
+| `/privacy-policy` | old `privacy-policy.html` (unchanged) | keep until Family Rewards migrates; then redirect to `/family-rewards/privacy-policy/` |
+| `/delete-account` | old `delete-account.html` (unchanged) | keep until Family Rewards migrates; then redirect to `/family-rewards/delete-account/` |
+| `/garden-hq/privacy-policy/` | `garden-hq/privacy-policy.md` | live; to be entered in Play Console |
+| `/garden-hq/delete-account/` | `garden-hq/delete-account.md` | live; to be entered in Play Console (Data deletion URL) |
+| `/terms-of-service` | `/legal/terms-of-service/` | redirect live (`redirect_from` on the ToS page) |
 
 Update this table whenever a URL is added, moved, or entered in the Play Console.
 
@@ -138,7 +141,10 @@ bundle exec jekyll serve      # http://localhost:4000
 
 1. ~~Scaffold repo~~ (done)
 2. ~~Design the neutral Aych Labs shell~~ (done, pending Hal's review)
-3. Migrate Family Rewards pages and ToS to Markdown; add redirects; update Play Console URLs
+3. ~~Migrate ToS to Markdown with redirect~~ (done). Family Rewards migration waits
+   until the app and its policies are back in sync; its old `.html` pages stay
+   live and untouched until then. When migrating, delete each old `.html` file in
+   the same commit that adds `redirect_from` for its URL (the two would collide).
 4. Publish Garden HQ and Aych IQ policies as their projects hand them off
 5. When an app reaches production: give it a full page at `/<slug>/` (screenshots,
    features, Google Play badge, and a QR code to the Play listing). Generate the QR
