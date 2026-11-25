@@ -17,6 +17,7 @@ legal pages. Read this before changing anything.
 | Family Rewards (name may change before release) | `family-rewards` | Testing; earlier pages live on Google Play |
 | Garden HQ | `garden-hq` | Testing; policies added |
 | Aych IQ | `aych-iq` | In development |
+| Eventlight | `eventlight` | Testing; policies added |
 
 The registry lives in `_data/apps.yml`. Nav and footer read from it, so add or
 update an app there, not by hand-editing templates.
@@ -67,6 +68,8 @@ POLICY_SPEC.md       the handoff spec given to each app project
 | `/delete-account` | old `delete-account.html` (unchanged) | keep until Family Rewards migrates; then redirect to `/family-rewards/delete-account/` |
 | `/garden-hq/privacy-policy/` | `garden-hq/privacy-policy.md` | live; to be entered in Play Console |
 | `/garden-hq/delete-account/` | `garden-hq/delete-account.md` | live; to be entered in Play Console (Data deletion URL) |
+| `/eventlight/privacy-policy/` | `eventlight/privacy-policy.md` | to be entered in Play Console |
+| `/eventlight/delete-account/` | `eventlight/delete-account.md` | to be entered in Play Console |
 | `/terms-of-service` | `/legal/terms-of-service/` | redirect live (`redirect_from` on the ToS page) |
 
 Update this table whenever a URL is added, moved, or entered in the Play Console.

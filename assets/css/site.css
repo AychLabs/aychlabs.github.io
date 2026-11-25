@@ -100,8 +100,7 @@ a:hover { text-decoration-color: currentColor; }
 }
 .hero__lede { max-width: 52ch; font-size: 1.15rem; color: var(--ink-2); margin: 0 0 2rem; }
 .hero__tiles { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: 1.25rem; }
-.hero__tiles .app-icon:nth-child(2) { transform: translateY(1.5rem); }
-.hero__tiles .app-icon:nth-child(3) { grid-column: 1 / -1; justify-self: center; margin-top: .9rem; }
+.hero__tiles .app-icon:nth-child(even) { transform: translateY(1.5rem); }
 
 /* App icon tile (placeholder until real icons exist) */
 .app-icon {
@@ -110,7 +109,7 @@ a:hover { text-decoration-color: currentColor; }
   border-radius: calc(var(--size) * .23);
   display: inline-grid; place-items: center; flex: none;
   background: var(--accent);
-  color: #fff;
+  color: var(--tile-ink, #fff);
   font: 600 calc(var(--size) * .34)/1 var(--font-body);
   letter-spacing: -0.01em;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.14), 0 1px 2px rgba(20,23,28,.12);
