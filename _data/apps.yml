@@ -3,6 +3,7 @@
 # policies: true once <slug>/privacy-policy.md and delete-account.md exist
 # accent:   app brand color; used for icon tiles, bars, dots, and rules (never body text)
 # monogram: 1-2 letters shown on the placeholder icon tile
+# tile_ink: optional monogram text color, for light accents (default white)
 # icon:     path to the real app icon (e.g. /assets/apps/garden-hq/icon.png); replaces the monogram tile when set
 - name: Family Rewards
   slug: family-rewards
@@ -30,4 +31,14 @@
   policies: false
   accent: "#00C389"
   tagline: A sports app, in development.
+  play_url: ""
+- name: Eventlight
+  slug: eventlight
+  monogram: EL
+  icon: ""
+  status: testing
+  policies: true
+  accent: "#E8B65A"
+  tile_ink: "#14171C"     # dark monogram text; white is unreadable on this light amber
+  tagline: Count down to the dates and events that matter, right on your home screen.
   play_url: ""
